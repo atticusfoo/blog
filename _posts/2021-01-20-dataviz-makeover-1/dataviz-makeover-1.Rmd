@@ -5,7 +5,7 @@ description: |
 author:
   - name: Atticus Foo
     url: https://public.tableau.com/profile/atticusfoo#!/
-date: 01-20-2021
+date: 01-28-2021
 output:
   distill::distill_article:
     toc: true
@@ -39,6 +39,7 @@ Without the context of the primary communication intent of the above chart, it i
 
 ### 1.1.1 Annotations do not match the data presented in the table 
 •	The selected age bands grouped in the annotations are not shown in the visual data - it is hence difficult to match the description with the visual. (e.g. 16% in 2009 = 8+4.6+1.8+1.2 = 15.6) and (25% in 2019 = 2019 10.2+7.3+4.5+2.7=24.7).
+
 •	The current data or visualisation does not show the LFPR increase for the resident labour force aged 25 to 54 described in the annotation. 
 
 ### 1.1.2 Which dataset is the graphic visualisation to? 
@@ -46,25 +47,31 @@ Without the context of the primary communication intent of the above chart, it i
 •	As the data only shows proportion of the labour force, it is not possible to determine the total volume of the labor force - to see if it has grown or shrunk from 2009 to 2019.
 
 ### 1.1.3 Unclear on the main point of the graphic:
-•	If the main aim is to demonstrate a) aging labor force, and b) increase in LBFR for 55 and over, the curre
-nt chart does not show the movement across the decade. 
+•	If the main aim is to demonstrate a) aging labor force, and b) increase in LBFR for 55 and over, the current chart does not show the movement across the decade. 
+
 •	May be able to do bracketing to show the movement within the age groups.
 
 ## 1.2 Aesthetics 
 
 ### 1.2.1 Labelling of Figure titles and captions 
 •	The chart adopts a 538 style of visual style, with the Figure Title and subtitle nested in the top left corner of the visualisation. While it is a trendy style to imitate, it is not executed well here as it the caption 'per cent' describes neither the title nor the graphic. 
+
 •	Instead, the subtitle 'per cent' could be moved closer to the table, so as to more clearly indicate that the data in the table are percentages. 
+
 •	The caption could then be changed to indicate that the graphic is intended to present the key point in the annotation - which is the shift in labour force demographic from 2009 to 2019.
+
 •	The median of the graphic uses a continuous representation whereas the x axis is based on a categorical variable. This conflation is technically inaccurate and may make it confusing for the reader.
 
 ### 1.2.2 Not ideal for readers with Colour-Vision Deficiencies (CVD)
 •	In terms of aesthetics, the colour choice of grey and blue may be difficult to distinguish, especially for those with colour-vision deficiency (deuteranomaly). 
+
 •	It would be more helpful to refer to CVD safe colour scales so as to reach out to a wider group of readers. CVD simulators can be found [online](https://www.color-blindness.com/coblis-color-blindness-simulator/).
 
 ### 1.2.3 Directing focus with highlights 
-•	There are two vertical reference lines to show the change in the median age from 41 years old to 44 years old. A visual cue could have been added to show the shift. This can be done in the form of a small arrow. 
-•	It also does not show the largest changes in each cohort (ie. 15-19 remained the same). 
+•	There are two vertical reference lines to show the change in the median age from 41 years old to 44 years old. A visual cue could have been added to show the shift. This can be done in the form of a small arrow.
+
+•	It also does not show the largest changes in each cohort (ie. 15-19 remained the same).
+
 •	At the same time, within each cohort, changes could be made to show whether the cohort witnessed an increase or decrease. 
 
 # #2 Sketch of Alternate Design 
@@ -72,8 +79,11 @@ nt chart does not show the movement across the decade.
 ![Source: Sketch of alternate design](images/week1/sketch.jpg)
 
 The sketch above highlights the three key proposals for change from the original visualisation: 
-•	The first is to improve the layout of titles and labels on the axis. The intent to provide clear text labels while keeping the visualisation clutter-free by reducing duplication or irrelevant information. 
+
+•	The first is to improve the layout of titles and labels on the axis. The intent to provide clear text labels while keeping the visualisation clutter-free by reducing duplication or irrelevant information.
+
 •	Secondly, as the main objective is to demonstrate the key shifts from 2009 2019, a decision was made to select LFPR only. 
+
 •	Lastly, we intend to include a time series – since the data is provide by MOM – in order to identify if the shifts in LFPR can be attributed to key events during that decade. 
 
 # #3 Proposed Visualisation in Tableau  
@@ -129,25 +139,29 @@ knitr::include_graphics("images/week1/final2.png")
 
 ## 5.1 Aging Labour Force in Singapore  
 •	There is an observe shift in Singapore’s LBFR, with more elderly workers from the ages of 55 and above remaining active in the population’s labour force. 
+
 •	This shift is most observable in the age groups of 55 – 64 with an increase in 9.3 percentage points from 2009 and 65 and over with an increase in 11.5 percentage points in the same period.
+
 •	This is likely to increase in the next decade, especially with proposed changes to retirement age (raise from 62 to 65 by 2030) and re-employment age (raise from 67 to 70 by 2030) 
 
 
 ## 5.2 Government Policy has an impact on LFPR 
 •	Government policy introduced in the last decade has allowed Singapore’s aging population provide more protections to older workers. 
+
 •	This is necessary to protect our aging workforce, by legislating that companies extend their retirement and re-employment age, to ensure that older workers in Singapore can continue to work and support themselves in old age. 
+
 •	As there was intense debate in 2013 regarding Singapore’s Population White Paper, it would be interesting to integrate foreign worker data to understand better how Government measures have protected Singaporean workers – whilst ensuring a viable labour force in Singapore.
 
 ## 5.3 Dramatic shifts in gender demographic between 2009 and 2019 
 •	Based on the visualisation, the most dramatic changes from 2009 to 2019 is the increase in female workers in the LBFR across three different age groups from 25 years upwards. 
+
 •	This could be attributed to the trend of dual income families from the turn of the century. More recently, these changes could be attributed to changes to improve protections to female workers following the CEDAW report in 2011. Changes to protect working mothers was also introduced together with the Employment Act amendments in 2013. 
+
 •	Of note, is the largest increase in the older female demographic (as high as 15.6 percentage pts), likely due to protections made for older workers guaranteeing their employment past the ages of 62.  
 
 
 Thank you for reading up to this point! 
 
-This blog is a data visualisation assignment for the MITB programme at the Singapore Management University. 
-
-end
+_This blog is a data visualisation assignment for the MITB programme at the Singapore Management University._
 
 
