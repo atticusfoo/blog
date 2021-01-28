@@ -42,11 +42,12 @@ Without the context of the primary communication intent of the above chart, it i
 
 •	The current data or visualisation does not show the LFPR increase for the resident labour force aged 25 to 54 described in the annotation. 
 
-### 1.1.2 Which dataset is the graphic visualisation to? 
-•	The annotations describe Labour Force Participation rate - however the data in the visualisation demonstrates data relating to resident labour force. This makes it difficult to follow the description  
+### 1.1.2 Which dataset is the visualisation referring to? 
+•	The annotations describe Labour Force Participation rate - however the data in the visualisation demonstrates data relating to resident labour force. This makes it difficult to follow the description.
+
 •	As the data only shows proportion of the labour force, it is not possible to determine the total volume of the labor force - to see if it has grown or shrunk from 2009 to 2019.
 
-### 1.1.3 Unclear on the main point of the graphic:
+### 1.1.3 The main objective of the visualisation is not clea:
 •	If the main aim is to demonstrate a) aging labor force, and b) increase in LBFR for 55 and over, the current chart does not show the movement across the decade. 
 
 •	May be able to do bracketing to show the movement within the age groups.
@@ -88,8 +89,8 @@ The sketch above highlights the three key proposals for change from the original
 
 # #3 Proposed Visualisation in Tableau  
 
-```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-body-outset", fig.width=12, fig.height=6}
-knitr::include_graphics("images/week1/final2.png")
+```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-body-outset", fig.width=14, fig.height=10}
+knitr::include_graphics("images/week1/final5.png")
 ```
 
 
@@ -134,7 +135,7 @@ Finally, edit the caption below the X axis to credit source | ![caption](images/
 # #5 Insights from the visualisation 
 
 ```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-body-outset", fig.width=12, fig.height=6}
-knitr::include_graphics("images/week1/final2.png")
+knitr::include_graphics("images/week1/final5.png")
 ```
 
 ## 5.1 Aging Labour Force in Singapore  
