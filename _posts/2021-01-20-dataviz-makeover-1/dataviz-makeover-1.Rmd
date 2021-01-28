@@ -1,10 +1,10 @@
 ---
 title: "Dataviz Makeover 1"
 description: |
-  A short description of the post.
+  Re-imagining MOM's Labour Force in Singapore 2019 Report in Tableau 
 author:
   - name: Atticus Foo
-    url: https://example.com/norajones
+    url: https://public.tableau.com/profile/atticusfoo#!/
 date: 01-20-2021
 output:
   distill::distill_article:
@@ -15,127 +15,137 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-# 1.0 Overview
+# Overview
 
-Correlation coefficient is a popular statistic that use to measure the type and strength of the relationship between two variables.  The values of a correlation coefficient ranges between -1.0 and 1.0.  A correlation coefficient of 1 shows a perfect linear relationship between the two variables, while a -1.0 shows a perfect inverse relationship between the two variables.  A correlation coeficient of 0.0 shows no linear relationship between the two variables. 
+The [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx) is an annual report on Singapore’s labour market produced by the Manpower Research and Statistics Department. As part of the assignment, we will attempt to _'makeover'_ a chart depicting the resident labour force by age. The following sections of this makeover attempt can be found below:   
 
-When multivariate data are used, the correlation coeficeints of the pair comparisons are displayed in a table form known as correlation matrix or scatterplot matrix.  
-
-There are three broad reasons for computing a correlation matrix.
-
-- To reveal the relationship between highdimensional variables pairwisely.
-- To input into other analyses. For example, people commonly use correlation matrixes as inputs for exploratory factor analysis, confirmatory factor analysis, structural equation models, and linear regression when excluding missing values pairwise.
-- As a diagnostic when checking other analyses. For example, with linear regression a high amount of correlations suggests that the linear regression’s estimates will be unreliable.
-
-When the data is large, both in terms of the number of observations and the number of variables, [Corrgram](http://www.datavis.ca/papers/corrgram.pdf) tend to be used to visually explore and analyse the structure and the patterns of relations among variables.  It is designed based on two main schemes:
-
-- Rendering the value of a correlation to depict its sign and magnitude, and
-- Reordering the variables in a correlation matrix so that "similar" variables are positioned adjacently, facilitating perception. 
-
-In this hands-on exercise, you will learn how to plot data visualisation for visualising correlation matrix with R.  It consists of three main sections.  First, you will learn how to create correlation matrix using [*pairs()*](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs) of R Graphics.  Next, you will learn how to plot corrgram using **corrplot** package of R Lastly, you will learn how to create an interactive correlation matrix using plotly R.   .  
+- #1 Assessment of visualisation based on clarity and aesthetics 
+- #2 Sketch of alternate design
+- #3 Proposed visualisation in Tableau 
+- #4 Step-by-step guide 
+- #5 Insights from the visualisation  
 
 
-#  2.0 Installing and Launching R Packages
+# #1 Asessment of visualisation based on clarity and aesthetics
 
-Before you get started, you are required:
+![Source: Comprehensive Labour Force Survey, MOM](images/week1/MOMlabourbase.PNG)
+_"With population ageing and sustained rise in LFPR of older residents, the share of residents aged 55 & over in the labour force rose substantially from 16% in 2009 to 25% in 2019. Meanwhile, the share of resident labour force aged 25 to 54 declined from 75% to 67% even as their LFPR increased, as the population cohorts moving into these age bands were smaller than those who moved out due to lower birth rates. As a result the median age of residents in the labour force rose from 41 years in 2009 to 44 years in 2019."_
 
-- to start a new R project, and
-- to create a new R Markdown document.
+Without the context of the primary communication intent of the above chart, it is difficult to provide an assessment of how it can be improved. As such,the critique below will be based solely on the rubrics of _clarity_ and _aesthetics_. 
 
-Next, you will use the code chunk below to install and launch **corrplot**,  **ggpubr**, **plotly** and **tidyverse** in RStudio.
+## 1.1 Clarity 
 
-```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+### 1.1.1 Annotations do not match the data presented in the table 
+•	The selected age bands grouped in the annotations are not shown in the visual data - it is hence difficult to match the description with the visual. (e.g. 16% in 2009 = 8+4.6+1.8+1.2 = 15.6) and (25% in 2019 = 2019 10.2+7.3+4.5+2.7=24.7).
+•	The current data or visualisation does not show the LFPR increase for the resident labour force aged 25 to 54 described in the annotation. 
 
-packages = c('ggpubr', 'tidyverse')
+### 1.1.2 Which dataset is the graphic visualisation to? 
+•	The annotations describe Labour Force Participation rate - however the data in the visualisation demonstrates data relating to resident labour force. This makes it difficult to follow the description  
+•	As the data only shows proportion of the labour force, it is not possible to determine the total volume of the labor force - to see if it has grown or shrunk from 2009 to 2019.
 
-for(p in packages){library
-  if(!require(p, character.only = T)){
-    install.packages(p)
-  }
-  library(p, character.only = T)
-}
+### 1.1.3 Unclear on the main point of the graphic:
+•	If the main aim is to demonstrate a) aging labor force, and b) increase in LBFR for 55 and over, the curre
+nt chart does not show the movement across the decade. 
+•	May be able to do bracketing to show the movement within the age groups.
+
+## 1.2 Aesthetics 
+
+### 1.2.1 Labelling of Figure titles and captions 
+•	The chart adopts a 538 style of visual style, with the Figure Title and subtitle nested in the top left corner of the visualisation. While it is a trendy style to imitate, it is not executed well here as it the caption 'per cent' describes neither the title nor the graphic. 
+•	Instead, the subtitle 'per cent' could be moved closer to the table, so as to more clearly indicate that the data in the table are percentages. 
+•	The caption could then be changed to indicate that the graphic is intended to present the key point in the annotation - which is the shift in labour force demographic from 2009 to 2019.
+•	The median of the graphic uses a continuous representation whereas the x axis is based on a categorical variable. This conflation is technically inaccurate and may make it confusing for the reader.
+
+### 1.2.2 Not ideal for readers with Colour-Vision Deficiencies (CVD)
+•	In terms of aesthetics, the colour choice of grey and blue may be difficult to distinguish, especially for those with colour-vision deficiency (deuteranomaly). 
+•	It would be more helpful to refer to CVD safe colour scales so as to reach out to a wider group of readers. CVD simulators can be found [online](https://www.color-blindness.com/coblis-color-blindness-simulator/).
+
+### 1.2.3 Directing focus with highlights 
+•	There are two vertical reference lines to show the change in the median age from 41 years old to 44 years old. A visual cue could have been added to show the shift. This can be done in the form of a small arrow. 
+•	It also does not show the largest changes in each cohort (ie. 15-19 remained the same). 
+•	At the same time, within each cohort, changes could be made to show whether the cohort witnessed an increase or decrease. 
+
+# #2 Sketch of Alternate Design 
+
+![Source: Sketch of alternate design](images/week1/sketch.jpg)
+
+The sketch above highlights the three key proposals for change from the original visualisation: 
+•	The first is to improve the layout of titles and labels on the axis. The intent to provide clear text labels while keeping the visualisation clutter-free by reducing duplication or irrelevant information. 
+•	Secondly, as the main objective is to demonstrate the key shifts from 2009 2019, a decision was made to select LFPR only. 
+•	Lastly, we intend to include a time series – since the data is provide by MOM – in order to identify if the shifts in LFPR can be attributed to key events during that decade. 
+
+# #3 Proposed Visualisation in Tableau  
+
+```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-body-outset", fig.width=12, fig.height=6}
+knitr::include_graphics("images/week1/final2.png")
 ```
 
-# 3.0 Importing and Preparing The Data Set 
 
-In this hands-on exercise, the [Wine Quality Data Set](https://archive.ics.uci.edu/ml/datasets/wine+quality) of UCI Machine Learning Repository will be used.  The data set consists of 13 variables and 6497 observations.  For the purpose of this exercise, we have combined the red wine and white wine data into one data file.  It is called wine_quality and is in csv file format.  
+The [visualisation](https://public.tableau.com/profile/atticusfoo#!/vizhome/Assignment1v1_16117701737610/Dashboard1) was built using Tableau Desktop Professional Edition 2020.40.
+
+The key change made in the data visualisation is to include key events and its possible impact on LFPR. This means utilising a time series instead of just comparing two points of data, 2019 and 2009. Based timeline, it is likely policy changes have directly led to changes in LFPR. 
+
+In addition, a feature that was integrated into the LFPR dataset was the gender demographic as we wanted to examine if policy shifts had an impact on male and female workers in the population. 
+
+Lastly, visual changes were made to ensure consistency and clarity when comparing LBFR. A greyscale was also adopted for the demographic age groups, in order to suggest Singapore’s aging labour force.
 
 
-## 3.1 Importing Data
+# #4 Step-by-step guide 
+The following steps will provide a brief overview of how the visualisation was completed.
 
-First, let us import the data into R by using *read_csv()*  of **readr** package.  
+### Data Preparation 
+
+The data used for the visualisations were taken from the Ministry of Manpower's website - [Resident Labour Force Participation Rate by Age and Sex 2009 - 2019 June](https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T5.xlsx).
 
 
-```{r, echo=TRUE, message=FALSE}
-wine <- read_csv("data/wine_quality.csv")
+Steps | Data Preparation
+------------- | -------------
+Data in excel was imported via Tableau | ![Importing Excel](images/week1/import data into Tableau.png){width=75%}
+Data was examined using Tableau's data viewer. As only certain age groups was needed, these were selected and filtered out for export. | ![Data View](images/week1/import data and view and export.png){width=75%}
+Data was then exported to Excel and manually adjusted. This is because we intended to use gender as an additional category. As such, data in the other sheets were merged together to form a combined worksheet. | ![Fields](images/week1/Import rexel.PNG){width=75%}
+Lastly, the adjusted Excel document was imported again in Tableau. The data fields was cleaned to ensure that the values were accurately represented | ![Fields1](images/week1/Import data and edit values.PNG){width=75%}
+
+### Charting Visualisation  
+
+Next, with the data prepared, Tableau's Polaris was used to visualise the worksheet
+
+Steps | Charting Visualisation
+------------- | -------------
+After adding age group and year to columns and LFPR and it's duplicate to rows, you should get a graph that looks like this | ![dualaxis](images/week1/next graph addition.png){width=75%}
+Right click on the graph and select dual axis to combine both charts. Now syncrhonise and edit the axis | ![axis](images/week1/next edit axis.PNG){width=75%}
+An important step is to ensure that the axis were fixed - as there are null values inserted to create a separate category (total & gender) | ![axis3](images/week1/dual axis.PNG){width=75%}
+Add gender to the color filter to adjust the graph's colour palette | ![color](images/week1/last color palette.png){width=75%}
+Add annotations to highlight key events in the timeline | ![annotate](images/week1/last annotate.PNG){width=75%}
+We added a reference line in order to add visual cues to the change in female worker (55 - 64) | ![cue](images/week1/last add reference line.PNG){width=75%}
+Finally, edit the caption below the X axis to credit source | ![caption](images/week1/last annotate caption.PNG){width=75%}
+
+# #5 Insights from the visualisation 
+
+```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-body-outset", fig.width=12, fig.height=6}
+knitr::include_graphics("images/week1/final2.png")
 ```
 
-Notice that beside quality and type, the rest of the variables are numerical and continuous data type. 
+## 5.1 Aging Labour Force in Singapore  
+•	There is an observe shift in Singapore’s LBFR, with more elderly workers from the ages of 55 and above remaining active in the population’s labour force. 
+•	This shift is most observable in the age groups of 55 – 64 with an increase in 9.3 percentage points from 2009 and 65 and over with an increase in 11.5 percentage points in the same period.
+•	This is likely to increase in the next decade, especially with proposed changes to retirement age (raise from 62 to 65 by 2030) and re-employment age (raise from 67 to 70 by 2030) 
 
 
-# 4.0 Univariate EDA with Histogram
+## 5.2 Government Policy has an impact on LFPR 
+•	Government policy introduced in the last decade has allowed Singapore’s aging population provide more protections to older workers. 
+•	This is necessary to protect our aging workforce, by legislating that companies extend their retirement and re-employment age, to ensure that older workers in Singapore can continue to work and support themselves in old age. 
+•	As there was intense debate in 2013 regarding Singapore’s Population White Paper, it would be interesting to integrate foreign worker data to understand better how Government measures have protected Singaporean workers – whilst ensuring a viable labour force in Singapore.
 
-In the figure below, multiple histograms are plottted to reveal the distribution of the selected variables in the wine quality data sets.  
+## 5.3 Dramatic shifts in gender demographic between 2009 and 2019 
+•	Based on the visualisation, the most dramatic changes from 2009 to 2019 is the increase in female workers in the LBFR across three different age groups from 25 years upwards. 
+•	This could be attributed to the trend of dual income families from the turn of the century. More recently, these changes could be attributed to changes to improve protections to female workers following the CEDAW report in 2011. Changes to protect working mothers was also introduced together with the Employment Act amendments in 2013. 
+•	Of note, is the largest increase in the older female demographic (as high as 15.6 percentage pts), likely due to protections made for older workers guaranteeing their employment past the ages of 62.  
 
-```{r, echo=FALSE, message=FALSE, layout="l-body-outset", fig.width=12, fig.height=6}
-fa <- ggplot(data=wine, aes(x= `fixed acidity`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-va <- ggplot(data=wine, aes(x= `volatile acidity`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-ca <- ggplot(data=wine, aes(x= `citric acid`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-rs <- ggplot(data=wine, aes(x= `residual sugar`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-ch <- ggplot(data=wine, aes(x= `chlorides`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-fSO2 <- ggplot(data=wine, aes(x= `free sulfur dioxide`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-tSO2 <- ggplot(data=wine, aes(x= `total sulfur dioxide`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-density <- ggplot(data=wine, aes(x= density)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-pH <- ggplot(data=wine, aes(x= pH)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-sulphates <- ggplot(data=wine, aes(x= sulphates)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-alcohol <- ggplot(data=wine, aes(x= alcohol)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
 
-ggarrange(fa, va, ca, rs, ch, fSO2, tSO2, density, pH, sulphates, alcohol, 
-          ncol = 4, nrow = 3)
-```
+Thank you for reading up to this point! 
 
-The code chunks used to create the data visualisation consists of two main parts.  First, we will create the individual histograms using the code chunk below.
+This blog is a data visualisation assignment for the MITB programme at the Singapore Management University. 
 
-```{r, echo=TRUE, eval=FALSE, message=FALSE}
-fa <- ggplot(data=wine, aes(x= `fixed acidity`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-va <- ggplot(data=wine, aes(x= `volatile acidity`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-ca <- ggplot(data=wine, aes(x= `citric acid`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-rs <- ggplot(data=wine, aes(x= `residual sugar`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-ch <- ggplot(data=wine, aes(x= `chlorides`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-fSO2 <- ggplot(data=wine, aes(x= `free sulfur dioxide`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-tSO2 <- ggplot(data=wine, aes(x= `total sulfur dioxide`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-density <- ggplot(data=wine, aes(x= density)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-pH <- ggplot(data=wine, aes(x= pH)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-sulphates <- ggplot(data=wine, aes(x= sulphates)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-alcohol <- ggplot(data=wine, aes(x= alcohol)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-```
 
-Next, the *ggarrange* function of **ggpur** package is used to group these histograms together.
 
-```{r, echo=TRUE, eval=FALSE, message=FALSE, fig.width=12, fig.height=6}
-ggarrange(fa, va, ca, rs, ch, fSO2, tSO2, density, pH, sulphates, alcohol, 
-          ncol = 4, nrow = 3)
-```
 
