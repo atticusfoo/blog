@@ -8,6 +8,8 @@ author:
 date: 01-20-2021
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 6
     self_contained: false
 ---
 
@@ -146,6 +148,6 @@ Thank you for reading up to this point!
 
 This blog is a data visualisation assignment for the MITB programme at the Singapore Management University. 
 
-
+end
 
 
