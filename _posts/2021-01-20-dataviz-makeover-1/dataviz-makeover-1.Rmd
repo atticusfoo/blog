@@ -89,7 +89,7 @@ The sketch above highlights the three key proposals for change from the original
 
 # #3 Proposed Visualisation in Tableau  
 
-```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-body-outset", fig.width=14, fig.height=10}
+```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-page", fig.width=14, fig.height=10}
 knitr::include_graphics("images/week1/final5.png")
 ```
 
@@ -134,7 +134,7 @@ Finally, edit the caption below the X axis to credit source | ![caption](images/
 
 # #5 Insights from the visualisation 
 
-```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-body-outset", fig.width=12, fig.height=6}
+```{r, echo=FALSE, out.width="75%", fig.cap="Data Re-presented.",layout="l-page", fig.width=12, fig.height=6}
 knitr::include_graphics("images/week1/final5.png")
 ```
 
