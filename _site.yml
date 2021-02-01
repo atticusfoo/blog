@@ -1,7 +1,7 @@
-name: "blog"
-title: "IDEA"
+name: "Re-Presenting Data"
+title: "Re-Presenting Data"
 description: |
-  IDEA
+  Re-presenting Data
 output_dir: "_site"
 navbar:
   right:
