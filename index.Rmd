@@ -1,5 +1,5 @@
 ---
-title: "IDEA"
+title: "Re-Presenting Data"
 site: distill::distill_website
 listing: posts
 ---
