@@ -1,10 +1,10 @@
 ---
-title: "Welcome to Tabula Rasa"
+title: "Re-presenting Data"
 description: |
   The world forgetting by the world forgot. Eternal Sunshine of the Spotless Mind!
 author:
   - name: Atticus Foo  
-    url: https://example.com/norajones
+    url: atticusfoo.2020@mitb.smu.edu.sg
     affiliation: School of Computing and Information Systems, Singapore Management University
     affiliation_url: https://www.smu.edu.sg/
 date: 01-20-2021

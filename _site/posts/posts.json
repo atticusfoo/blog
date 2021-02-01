@@ -52,19 +52,19 @@
   },
   {
     "path": "posts/welcome/",
-    "title": "Welcome to Tabula Rasa",
+    "title": "Re-presenting Data",
     "description": "The world forgetting by the world forgot. Eternal Sunshine of the Spotless Mind!",
     "author": [
       {
         "name": "Atticus Foo",
-        "url": "https://example.com/norajones"
+        "url": "atticusfoo.2020@mitb.smu.edu.sg"
       }
     ],
     "date": "2021-01-20",
     "categories": [],
     "contents": "\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-01-20T18:50:34+08:00",
+    "last_modified": "2021-02-01T20:12:29+08:00",
     "input_file": "welcome.utf8.md"
   }
 ]
