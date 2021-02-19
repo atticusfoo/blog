@@ -64,6 +64,7 @@ Without the context of the primary communication intent of the above chart, it i
 •	In terms of placement, the colour legend on the right could be placed nearer to the chart on the left for easier visual reference. It also assumes that readers have prior knowledge as to what the categorical values 2, 3 and 4 mean as they are currently unlabelled. It is also unclear what ‘Vac 1’ means. 
 
 •	In terms of order, the order of the colours for legend could be reversed so that it matches the chart on the left where the colours go from green to blue, instead of the current order which is blue to green. 
+
 ### 1.2.3 Gridlines
 •	The use of gridlines in the second chart help to negate the use of value labels which would add to clutter and distract from the overall presentation of the chat. This can be improved by using narrow bands for the tick-marks as the current 20% increment is quite wide, making it difficult to visualise accurately. This is not helped by the fact that most of the values fall between 20% to 45%. 
 
@@ -560,7 +561,7 @@ This is interesting as more than 60% of Singaporeans agreed that the Government 
 
 Additionally, female respondents tended to respond strongly to agree that they were worried about than male respondents the potential side effects of the vaccine. This is tracked at the 95% CI limits as seen in the chart above. 
 
-## 5.3 Older Singaporeand who are unemployed may be at risk 
+## 5.3 Older Singaporens who are unemployed may be at risk 
 
 ![Source: Waffle](images/G4 govwillprovidevaccine.png)
 
@@ -575,9 +576,12 @@ They were also more likely to strongly agree about the side effects of the COVID
 Conversely the proportion of respondents who were younger Singaporeans who were also unemployed were more worried about getting COVID-19. 
 
 
-# #References: 
+# References: 
 Rethinking the divergent stacked bar chart – placing the stronger views in the [centre](https://www.datarevelations.com/resources/rethinkingdivergent/) 
+
 Tableau Playbook – [Waffle Chart](https://www.pluralsight.com/guides/tableau-playbook-waffle-chart) 
+
+
 
 Thank you for reading up to this point! 
 
