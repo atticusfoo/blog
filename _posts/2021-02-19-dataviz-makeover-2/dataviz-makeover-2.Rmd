@@ -298,8 +298,6 @@ Conversely the proportion of respondents who were younger Singaporeans who were 
 Rethinking the divergent stacked bar chart – placing the stronger views in the [centre](https://www.datarevelations.com/resources/rethinkingdivergent/) 
 Tableau Playbook – [Waffle Chart](https://www.pluralsight.com/guides/tableau-playbook-waffle-chart) 
 
-
-
 Thank you for reading up to this point! 
 
 _This blog is a data visualisation assignment for the MITB programme at the Singapore Management University._
