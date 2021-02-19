@@ -13,18 +13,6 @@ output:
     self_contained: false
 ---
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
-
-
----
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
@@ -297,8 +285,6 @@ Conversely the proportion of respondents who were younger Singaporeans who were 
 # #References: 
 Rethinking the divergent stacked bar chart – placing the stronger views in the [centre](https://www.datarevelations.com/resources/rethinkingdivergent/) 
 Tableau Playbook – [Waffle Chart](https://www.pluralsight.com/guides/tableau-playbook-waffle-chart) 
-
-
 
 Thank you for reading up to this point! 
 
