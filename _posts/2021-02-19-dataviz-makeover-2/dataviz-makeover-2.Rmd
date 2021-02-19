@@ -264,8 +264,6 @@ Respondents France, Spain, Japan and Singapore were the top countries in terms o
 
 This is interesting as more than 60% of Singaporeans agreed that the Government would provide them with an effective COVID-19 vaccine (with less than 10% disagreeing otherwise).
 
-![Source: Potential Side Effects](imagesG2 Female worry potential side effects.PNG )
-
 Additionally, female respondents tended to respond strongly to agree that they were worried about than male respondents the potential side effects of the vaccine. This is tracked at the 95% CI limits as seen in the chart above. 
 
 ## 5.3 Older Singaporeand who are unemployed may be at risk 
