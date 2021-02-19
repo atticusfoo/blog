@@ -98,7 +98,7 @@ knitr::include_graphics("images/A2 Final Dashboard.PNG")
 ```
 
 
-This visualisation was built using Tableau Desktop Professional Edition 2020.40. 
+This visualisation was built using Tableau Desktop Professional Edition 2020.40 and can be found [here](https://public.tableau.com/profile/atticusfoo#!/vizhome/DataVizMakeover2_16137217369900/Dashboard1)
 
 The key changes made in the data visualisation is explained and outlined in the paper sketch above. The Likert Scale used in the YouGov survey has been reproduced in a diverging stacked bar chart with the neutral values at the side.
 
@@ -290,13 +290,3 @@ Tableau Playbook – [Waffle Chart](https://www.pluralsight.com/guides/tableau-p
 Thank you for reading up to this point! 
 
 _This blog is a data visualisation assignment for the MITB programme at the Singapore Management University._
-
-
-
-
-
-
-
-
-
-
