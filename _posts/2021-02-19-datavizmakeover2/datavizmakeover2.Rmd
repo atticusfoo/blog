@@ -33,7 +33,7 @@ Based on the above visualisations, the task is to make a critque on the Clarity 
 
 Clarity | Aesthetics
 ------------- | -------------
-No clear distinction that the chart on the right is a subset of the left. | Blue Colour used for both charts to might be confusing to the reader.
+No clear distinction that the chart on the right is a subset of the left. Difficult to visualise the number of responses because this will have an impact on the reproducibility of this result in the survey. | Blue Colour used for both charts to might be confusing to the reader.
 Y-axis of both charts do not match due to different sort order. This confuses the reader as they are placed side by side. | Color scheme is confusing. Red is mainly used to denote negative performance values, while blue or green is used to denote positive performance values.
 Stacked bar chart shows proportion of response within countries well, however since the size of each bar is not properly aligned, it is difficult to compare down the table(between countries).  | Color legend placed next to horizontal bar that is completely blue in color. May mislead people as reader might expect the colors to be visually represented in that graph when it actually denotes the responses in the left chart.
 X-axis of both charts are not standardised. Chart on left has no decimal places and ends at 100% while chart on right has axis labels in 1 decimal place and ends at 60.0%, this is misleading to the reader as they may percieve the importance of the message the chart is trying to convey. | Color Legend is not properly labeled, the reader is unable to interpret what the values of 2, 3 and 4 represent.
