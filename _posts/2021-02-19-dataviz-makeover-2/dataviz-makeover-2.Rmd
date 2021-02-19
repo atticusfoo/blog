@@ -13,6 +13,8 @@ output:
     self_contained: false
 ---
 
+![Source: Re-presented](images/A2 Makeover.png)
+
 # Overview
 
 As COVID-19 vaccines roll-out across the globe, the actual vaccination rates can vary due to various reasons including political ones. For the purposes of this data-makeover, we will focus on the opinions and attitudes of respondents towards COVID-19 and the vaccination around the world. Data is taken from the Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub [here](https://github.com/YouGov-Data/covid-19-tracker).
