@@ -27,7 +27,7 @@ This post will attempt to re-present (makeover) the chart found in the next sect
 -	#4 Step-by-step guide
 -	#5 Insights from the visualisation
 
-# #1 Asessment of visualisation based on clarity and aesthetics
+# #1 Assessment of visualisation based on clarity and aesthetics
 
 ![Source: Before](images/A1 Makeover Graphic.PNG)
 
