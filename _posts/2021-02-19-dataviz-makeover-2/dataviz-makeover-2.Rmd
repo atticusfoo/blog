@@ -256,7 +256,7 @@ While they felt less strongly towards the vaccine, they were also less likely to
 
 ## 5.2 Worried about the potential side-effects of the vaccine. 
 
-![Source: Potential Side Effects](images/G2 Worried about side effects of the vaccine.PNG)
+![Source: Potential Side Effects](images/G2 Worried abou the side effects female.png)
 
 Respondents France, Spain, Japan and Singapore were the top countries in terms of those who were most worried about the potential side effects of the vaccine. 
 
@@ -282,6 +282,15 @@ They were also more likely to strongly agree about the side effects of the COVID
 
 Conversely the proportion of respondents who were younger Singaporeans who were also unemployed were more worried about getting COVID-19. 
 
+## 5.4 Low Response Rates May Affect Results 
+
+![Source: Low Response Rates](images/G5 Error Bar.PNG)
+
+For the survey question, I am worried about getting COVID-19, Israel's results are strongly pro-vaccine, with about 55% of respondents stating that they intended to get the vaccine within a year if it were avaialble to them. 
+This puts them slightly behind the UK in terms of rankings. 
+
+However, due to the CI plot seen on the dot on line bar plot, we can identify that there is a very wide CI. 
+This is because the number of respondents are low. 
 
 # #References: 
 Rethinking the divergent stacked bar chart – placing the stronger views in the [centre](https://www.datarevelations.com/resources/rethinkingdivergent/) 
