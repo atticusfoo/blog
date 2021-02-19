@@ -85,621 +85,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Re-Presenting Data</title>
+  <title>Dataviz Makeover 2</title>
+
+  <meta property="description" itemprop="description" content="Visualisation Makeover on public willingess to take Covid-19 Vaccine in Tableau"/>
 
 
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-02-19"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-02-19"/>
+  <meta name="article:author" content="Chee Kah Wen Gerald"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Re-Presenting Data"/>
+  <meta property="og:title" content="Dataviz Makeover 2"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Visualisation Makeover on public willingess to take Covid-19 Vaccine in Tableau"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Re-Presenting Data"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Re-Presenting Data"/>
+  <meta property="twitter:title" content="Dataviz Makeover 2"/>
+  <meta property="twitter:description" content="Visualisation Makeover on public willingess to take Covid-19 Vaccine in Tableau"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Re-Presenting Data"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Dataviz Makeover 2"]},{"type":"character","attributes":{},"value":["Visualisation Makeover on public willingess to take Covid-19 Vaccine in Tableau \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Chee Kah Wen Gerald"]},{"type":"character","attributes":{},"value":["https://public.tableau.com/profile/gerald.chee1204#!/vizhome/DataVizMakeover2_16137273661220/Dashboard"]}]}]},{"type":"character","attributes":{},"value":["02-19-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[6]},{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["Images/Analysis 1.PNG","Images/Analysis 2.PNG","Images/Analysis 3.PNG","Images/Analysis 4.PNG","Images/Dashboard_1.PNG","Images/Dashboard_2.PNG","Images/Dashboard_3.PNG","Images/Dashboard_4.PNG","Images/data_clean_1.PNG","Images/data_clean_10.PNG","Images/data_clean_11.PNG","Images/data_clean_2.PNG","Images/data_clean_3.PNG","Images/data_clean_4.PNG","Images/data_clean_5.PNG","Images/data_clean_6.PNG","Images/data_clean_7.PNG","Images/data_clean_8.PNG","Images/data_clean_9.PNG","Images/download_1.PNG","Images/download_2.PNG","Images/employment_1.PNG","Images/error_bar_1.PNG","Images/error_bar_10.PNG","Images/error_bar_11.PNG","Images/error_bar_12.PNG","Images/error_bar_13.PNG","Images/error_bar_14.PNG","Images/error_bar_2.PNG","Images/error_bar_3.PNG","Images/error_bar_4.PNG","Images/error_bar_5.PNG","Images/error_bar_6.PNG","Images/error_bar_7.PNG","Images/error_bar_8.PNG","Images/error_bar_9.PNG","Images/Figure 1.PNG","Images/Likert_scale_1.PNG","Images/Likert_scale_10.PNG","Images/Likert_scale_11.PNG","Images/Likert_scale_12.PNG","Images/Likert_scale_13.PNG","Images/Likert_scale_14.PNG","Images/Likert_scale_2.PNG","Images/Likert_scale_3.PNG","Images/Likert_scale_4.PNG","Images/Likert_scale_5.PNG","Images/Likert_scale_6.PNG","Images/Likert_scale_7.PNG","Images/Likert_scale_8.PNG","Images/Likert_scale_9.PNG","Images/Parameter_1.PNG","Images/Parameter_2.PNG","Images/proposed_makeover_1.jpeg","Images/world_map_1.PNG","Images/world_map_2.PNG","Images/world_map_3.PNG","Images/world_map_4.PNG","Images/world_map_4a.PNG","Images/world_map_5.PNG","Images/world_map_6.PNG","Images/world_map_7.PNG"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  </style>
-
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-              .filter(function(item) { return !!item.description; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description}
-                  </div>
-                  <div class="search-item-preview">
-                    <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -1985,282 +1403,411 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="datavizmakeover2_files/header-attrs-2.6/header-attrs.js"></script>
+  <script src="datavizmakeover2_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="datavizmakeover2_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="datavizmakeover2_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="datavizmakeover2_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="datavizmakeover2_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Re-Presenting Data","authors":[]}
+{"title":"Dataviz Makeover 2","description":"Visualisation Makeover on public willingess to take Covid-19 Vaccine in Tableau","authors":[{"author":"Chee Kah Wen Gerald","authorURL":"https://public.tableau.com/profile/gerald.chee1204#!/vizhome/DataVizMakeover2_16137273661220/Dashboard","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-19T00:00:00.000+08:00","citationText":"Gerald, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Re-Presenting Data</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="dataviz.html">DataViz Makeover</a>
-<a href="vap.html">Visual Analytics Project</a>
-<a href="about.html">About</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).load(function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Re-Presenting Data">Re-Presenting Data</h1>
-<a href="posts/2021-02-19-dataviz-makeover-2/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 19, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Atticus Foo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Dataviz Makeover 2</h2>
-<div class="dt-tags"></div>
-<p>Re-imagining YouGov's survey on attitudes and opinions towards COVID-19 vaccination.</p>
-</div>
-</a>
-<a href="posts/2021-02-19-datavizmakeover2/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 19, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Chee Kah Wen Gerald</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Dataviz Makeover 2</h2>
-<div class="dt-tags"></div>
-<p>Visualisation Makeover on public willingess to take Covid-19 Vaccine in Tableau</p>
-</div>
-</a>
-<a href="posts/2021-01-20-dataviz-makeover-1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 28, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Atticus Foo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2021-01-20-dataviz-makeover-1/images/week1/Final5.png"/>
-</div>
-<div class="description">
-<h2>Dataviz Makeover 1</h2>
-<div class="dt-tags"></div>
-<p>Re-imagining MOM's Labour Force in Singapore 2019 Report in Tableau</p>
-</div>
-</a>
-<a href="posts/2021-01-28-my-data-makeover-1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 28, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Chee Kah Wen Gerald</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Dataviz Makeover 1</h2>
-<div class="dt-tags"></div>
-<p>Visualisation Makeover on MOM's Labour Force in Singapore 2019 Report in Tableau</p>
-</div>
-</a>
-<a href="posts/welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 20, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Atticus Foo</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Re-presenting Data</h2>
-<div class="dt-tags"></div>
-<p>The world forgetting by the world forgot. Eternal Sunshine of the Spotless Mind!</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Re-Presenting Data</h1>
+<h1>Dataviz Makeover 2</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>Visualisation Makeover on public willingess to take Covid-19 Vaccine in Tableau</p></p>
 </div>
 
+<div class="d-byline">
+  Chee Kah Wen Gerald <a href="https://public.tableau.com/profile/gerald.chee1204#!/vizhome/DataVizMakeover2_16137273661220/Dashboard" class="uri">https://public.tableau.com/profile/gerald.chee1204#!/vizhome/DataVizMakeover2_16137273661220/Dashboard</a> 
+  
+<br/>02-19-2021
+</div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction"><strong>1. Introduction</strong></a></li>
+<li><a href="#critque-on-clarity-and-aesthetics"><strong>2. Critque on Clarity and Aesthetics</strong></a>
+<ul>
+<li><a href="#proposed-design"><strong>2.1 Proposed Design</strong></a></li>
+</ul></li>
+<li><a href="#preparation"><strong>3. Preparation </strong></a>
+<ul>
+<li><a href="#world-map"><strong>3.1 World Map </strong></a></li>
+<li><a href="#likert-scale"><strong>3.2 Likert Scale </strong></a></li>
+<li><a href="#error-bar-on-dot-plot"><strong>3.3 Error Bar on Dot plot </strong></a></li>
+<li><a href="#dashboard"><strong>3.4 Dashboard </strong></a></li>
+</ul></li>
+<li><a href="#observations-from-makeover-visualisation"><strong>4. Observations from Makeover Visualisation </strong></a></li>
+</ul>
+</nav>
+</div>
+<h1 id="introduction"><strong>1. Introduction</strong></h1>
+<p>In 2020, British international Internet-based market research and data analytics firm, YouGov partnered with the Institute of Global Health Innovation (IGHI) at Imperial College London to gather insights on people’s behaviours in response to COVID-19. To date,their research has covered 30 countries. From the publicly available data, A research team is currently conducting a study to understand the willingness of the public on Covid-19 vaccination.</p>
+<figure>
+<img src="Images/Figure%201.PNG" alt="FIGURE 1: VISUALISATION DONE BY RESEARCH SCIENTIST" /><figcaption aria-hidden="true">FIGURE 1: VISUALISATION DONE BY RESEARCH SCIENTIST</figcaption>
+</figure>
+<p>Based on the above visualisations, the task is to make a critque on the Clarity and Aesthetics of the charts, providing an alternative visualisation and listing down the steps to ensure repoducibility.</p>
+<hr />
+<h1 id="critque-on-clarity-and-aesthetics"><strong>2. Critque on Clarity and Aesthetics</strong></h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Clarity</th>
+<th>Aesthetics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No clear distinction that the chart on the right is a subset of the left.</td>
+<td>Blue Colour used for both charts to might be confusing to the reader.</td>
+</tr>
+<tr class="even">
+<td>Y-axis of both charts do not match due to different sort order. This confuses the reader as they are placed side by side.</td>
+<td>Color scheme is confusing. Red is mainly used to denote negative performance values, while blue or green is used to denote positive performance values.</td>
+</tr>
+<tr class="odd">
+<td>Stacked bar chart shows proportion of response within countries well, however since the size of each bar is not properly aligned, it is difficult to compare down the table(between countries).</td>
+<td>Color legend placed next to horizontal bar that is completely blue in color. May mislead people as reader might expect the colors to be visually represented in that graph when it actually denotes the responses in the left chart.</td>
+</tr>
+<tr class="even">
+<td>X-axis of both charts are not standardised. Chart on left has no decimal places and ends at 100% while chart on right has axis labels in 1 decimal place and ends at 60.0%, this is misleading to the reader as they may percieve the importance of the message the chart is trying to convey.</td>
+<td>Color Legend is not properly labeled, the reader is unable to interpret what the values of 2, 3 and 4 represent.</td>
+</tr>
+<tr class="odd">
+<td>Lack of labels on left chart to show exact proportion or count of responses, reader would need to infer from the X-axis and the part-to-whole relationship.</td>
+<td>Sweden,Canada,Norway,Finland have similar percentage values that responded ‘Strongly Agree’. This is hard for the reader to determine the eaxct proportion values as the x-axis interval increases by 20%. A smaller interval and gridline would help to make this information more distinct.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="proposed-design"><strong>2.1 Proposed Design</strong></h2>
+<figure>
+<img src="Images/proposed_makeover_1.jpeg" alt="PROPOSED VISUALISATION IN TABLEAU" /><figcaption aria-hidden="true">PROPOSED VISUALISATION IN TABLEAU</figcaption>
+</figure>
+<p>A likert scale chart is used to represent the diverging responses. This more clearly represents the proportions and visual scale of the differing opinions of different countries.</p>
+<p>The colour selection: red tones for negative responses, blue tones for positive responses and grey for neutral response.To prevent looking like a ‘traffic light’ as compared to prior visualisation. With a proper colour legend.</p>
+<p>Properly spelled titles to give readers a sense of confidence in the researcher who prepared the presentation.</p>
+<p>Parameter added to control the change of category, allowing readers to view data based on specific category.</p>
+<p>Filters added, giving the reader a choice on what data he/she would like to exclude for analysis.</p>
+<h1 id="preparation"><strong>3. Preparation </strong></h1>
+<p>The original source of the data can be found at <a href="https://github.com/YouGov-Data/covid-19-tracker">Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub</a></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Data Preparation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>After downloading covid-19-tracker-master, check if contents of folder tallies with description found on github</td>
+<td><img src="Images/download_1.PNG" style="width:75.0%" alt="download_1" /></td>
+</tr>
+<tr class="even">
+<td>Within data folder contains zipped folders by country. Extract all folders and placed individual csv files into covid-19-tracker-master/data</td>
+<td><img src="Images/download_2.PNG" style="width:75.0%" alt="download_2" /></td>
+</tr>
+<tr class="odd">
+<td>After opening Tableau,drag and drop any of the csv files (I used data from ‘Israel’ due to its small file size for quicker load times). Create a union with the current data source. Using the union by Wildcard, the ‘include’ field is left blank. This option creates a union of the current data source with all files located in the same folder</td>
+<td><img src="Images/data_clean_1.PNG" style="width:75.0%" alt="data_clean_1" /></td>
+</tr>
+<tr class="even">
+<td>After the union, a column called ‘path’ is created which is populated by the file name the data originated from.Aliases were created to change the displayed values to its Country name.</td>
+<td><img src="Images/data_clean_2.PNG" style="width:75.0%" alt="data_clean_2" /></td>
+</tr>
+<tr class="odd">
+<td>Since not all columns are useful for analysis, click on manage metadata button to display column headers in a list view. Selected columns unnecessary for analysis will be hidden</td>
+<td><img src="Images/data_clean_3.PNG" style="width:75.0%" alt="data_clean_3" /><img src="Images/data_clean_4.PNG" style="width:75.0%" alt="data_clean_4" /></td>
+</tr>
+<tr class="even">
+<td>After the above steps, the cleaned dataset was extracted and renamed ‘Cleaned’ before reconnecting to Tableau</td>
+<td><img src="Images/data_clean_5.PNG" style="width:75.0%" alt="data_clean_5" /><img src="Images/data_clean_6.PNG" style="width:75.0%" alt="data_clean_6" /></td>
+</tr>
+<tr class="odd">
+<td>For Columns Vac2_1,Vac2_2,Vac2_3,Vac2_6,Vac 3, their columns were renamed according to the values found in ‘codebook.xlsx’</td>
+<td><img src="Images/data_clean_7.PNG" style="width:75.0%" alt="data_clean_7" /></td>
+</tr>
+<tr class="even">
+<td>Because the age bands would be required for visualising the age-sex Pyramid, values were grouped together in bands of 5 years</td>
+<td><img src="Images/data_clean_8.PNG" style="width:75.0%" alt="data_clean_8" /></td>
+</tr>
+<tr class="odd">
+<td>Columns were created by pivoting the selected columns Vac2_1,Vac2_2,Vac2_3,Vac2_6,Vac 3(already renamed) into ‘pivot field name’ and ‘pivot field value’. They were renamed ‘Question’ and ‘Score’ for visualisation</td>
+<td><img src="Images/data_clean_9.PNG" style="width:75.0%" alt="data_clean_9" /></td>
+</tr>
+<tr class="even">
+<td>Aliases were created for ‘Score’ to display interger values</td>
+<td><img src="Images/data_clean_10.PNG" style="width:75.0%" alt="data_clean_10" /></td>
+</tr>
+<tr class="odd">
+<td>I also grouped the employment status to 3 different groups namely, Available income source, No income source and NA (Null and other responses were placed here as it is unclear if they responded or the value of other)</td>
+<td><img src="Images/employment_1.PNG" style="width:75.0%" alt="employment_1" /></td>
+</tr>
+<tr class="even">
+<td>After the above steps, the ‘Score’ column was filtered to remove the ‘null’ values as we would not be able to derive any insights for analysis.The final data set was exported for use to prepare the visualisations</td>
+<td><img src="Images/data_clean_11.PNG" style="width:75.0%" alt="data_clean_11" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="world-map"><strong>3.1 World Map </strong></h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Visualisation for World Map</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>For the world map,This column is renamed ‘Country’ and assigned geographic role as Country/Region.</td>
+<td><img src="Images/world_map_1.PNG" style="width:75.0%" alt="world_map_1" /></td>
+</tr>
+<tr class="even">
+<td>Longitude and Latitude calculated fields are auto generated in Tableau due to their assigned geographic role. Together with the count of row values in the csv. They will be used to visualise the map.</td>
+<td><img src="Images/world_map_2.PNG" style="width:75.0%" alt="world_map_2" /></td>
+</tr>
+<tr class="odd">
+<td>Latitude values are placed in Column and Longitude Values placed in Row. From the ‘Show Me’ tab, select the only available map visualisation</td>
+<td><img src="Images/world_map_3.PNG" style="width:75.0%" alt="world_map_3" /></td>
+</tr>
+<tr class="even">
+<td>To populate the map with color and labels, the count of all records are added. The country field is added into the detail button to visualise the map shapes.The legend display is display the Color to represent the number of respondants</td>
+<td><img src="Images/world_map_4.PNG" style="width:75.0%" alt="world_map_4" /><img src="Images/world_map_4a.PNG" style="width:75.0%" alt="world_map_4a" /></td>
+</tr>
+<tr class="odd">
+<td>The title of the legend is corrected to display ‘Number of Participants’. Since the colours do no start from 0 due to number of participants, the color is edited to start the color gradient from 0.The color of choice would be orange so as not to conflict with the blue that will be used in the likert scale</td>
+<td><img src="Images/world_map_5.PNG" style="width:75.0%" alt="world_map_5" /><img src="Images/world_map_6.PNG" style="width:75.0%" alt="world_map_6" /></td>
+</tr>
+</tbody>
+</table>
+<p>The World Map is finally visualised as seen here. <img src="Images/world_map_7.PNG" alt="world_map_7" /></p>
+<h2 id="likert-scale"><strong>3.2 Likert Scale </strong></h2>
+<p>Based on the task requirements, we need select how we would like to display the data based on the demographic category.Thus we would need select parameters for the visualisation.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Parameter Creation for breaking down information by Category</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>From a new sheet, we create a parameter called ‘Select Category’ using ‘create Parameter’ function. By using the formula as shown on the right. This would help map the ‘Score’ values to the associated Sentiment.</td>
+<td><img src="Images/Parameter_1.PNG" style="width:75.0%" alt="Parameter_1" /></td>
+</tr>
+<tr class="even">
+<td>Based on the selected parameter, we need to create a calculated field for each case within the ‘Select Category’ field.</td>
+<td><img src="Images/Parameter_2.PNG" style="width:75.0%" alt="Parameter_2" /></td>
+</tr>
+</tbody>
+</table>
+<p>We are ready to make a likert scale to easily visualise the results of the survey. To evaluate the proportion of respondents easily, we can divide axes and compare them across positive and negative responses.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Visualisation for Likert Scale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>We create ‘Response’ field using ‘create calculated field’ function. By using the formula as shown on the right. This would help map the ‘Score’ values to the associated Sentiment.</td>
+<td><img src="Images/Likert_scale_1.PNG" style="width:75.0%" alt="Likert_scale_1" /></td>
+</tr>
+<tr class="even">
+<td>Next, we create ‘No of Records (Ref)’ field using ‘created calculated field’ function. This would be a reference field to for future formulas and references.</td>
+<td><img src="Images/Likert_scale_2.PNG" style="width:75.0%" alt="Likert_scale_2" /></td>
+</tr>
+<tr class="odd">
+<td>‘Total count’ field is created to evaluate the total count. Note that this field is evaluated using the ‘Response’ field created in step 1 of this table.</td>
+<td><img src="Images/Likert_scale_3.PNG" style="width:75.0%" alt="Likert_scale_3" /></td>
+</tr>
+<tr class="even">
+<td>‘Count of Negative’ field is created to evaluate the negative scores which are 4 and 5.</td>
+<td><img src="Images/Likert_scale_4.PNG" style="width:75.0%" alt="Likert_scale_4" /></td>
+</tr>
+<tr class="odd">
+<td>Create ‘Total Count of Negative’ field using “created calculated field” function. Note that this field is evaluated using the ‘Response’ field.</td>
+<td><img src="Images/Likert_scale_5.PNG" style="width:75.0%" alt="Likert_scale_5" /></td>
+</tr>
+<tr class="even">
+<td>Create ‘Gantt Start’ field using ‘created calculated field’ function.</td>
+<td><img src="Images/Likert_scale_6.PNG" style="width:75.0%" alt="Likert_scale_6" /></td>
+</tr>
+<tr class="odd">
+<td>Create ‘Percentage’ field using ‘created calculated field’ function to visualise the size of the bar within the likert scale.</td>
+<td><img src="Images/Likert_scale_7.PNG" style="width:75.0%" alt="Likert_scale_7" /></td>
+</tr>
+<tr class="even">
+<td>Create ‘Gantt Percent’ field.Note that this field is evaluated using the ‘Response’ field.</td>
+<td><img src="Images/Likert_scale_8.PNG" style="width:75.0%" alt="Likert_scale_8" /></td>
+</tr>
+<tr class="odd">
+<td>Drag and drop ‘Gantt Percent’ field into Columns, ’Country’ and ‘Country’ ’Category Selection’ into Rows. Drag and drop ‘Response’ into the color mark, ‘Percentage into ‘Size’ Mark. Change the display of the visualisation to ‘Gantt Bar’.</td>
+<td><img src="Images/Likert_scale_9.PNG" style="width:75.0%" alt="Likert_scale_9" /></td>
+</tr>
+<tr class="even">
+<td>From the ‘Response’ in the color mark, we do manual sorting of the response. From our axis, the left side denotes negative responses, thus it will be sorted according to the order shown in the screenshot.</td>
+<td><img src="Images/Likert_scale_10.PNG" style="width:75.0%" alt="Likert_scale_10" /></td>
+</tr>
+<tr class="odd">
+<td>From the ‘Response’ color legend in the color mark, we manual chose the color scheme to represent the responses. I chose red tones for negative responses, blue tones for positive responses and grey for neutral response.</td>
+<td><img src="Images/Likert_scale_11.PNG" style="width:75.0%" alt="Likert_scale_11" /></td>
+</tr>
+<tr class="even">
+<td>Drag and drop ‘Percentage’ field into the Label button to display the percentages of the gantt bar.</td>
+<td><img src="Images/Likert_scale_12.PNG" style="width:75.0%" alt="Likert_scale_12" /></td>
+</tr>
+<tr class="odd">
+<td>Drag and drop fields ‘Country’,’Gender’,‘Question’,’Employment Status (group)’,’Category Selection’ and ‘Age (group) into ‘Filter’ pane. These filters are applied through all worksheets using this data source for linking the different sheets together.</td>
+<td><img src="Images/Likert_scale_13.PNG" style="width:75.0%" alt="Likert_scale_13" /></td>
+</tr>
+</tbody>
+</table>
+<p>The Likert scale is finally visualised as seen here. <img src="Images/Likert_scale_14.PNG" alt="Likert_scale_14" /></p>
+<h2 id="error-bar-on-dot-plot"><strong>3.3 Error Bar on Dot plot </strong></h2>
+<p>Visualising uncertainty</p>
+<p>If the same survey with the same questions and responses options was conducted at a different time frame, are we likely to see the same proportion of respondents from each country? we are unable to tell based on the likert scale alone. As such, we would need to set a confidence interval to find out whether 95% of the time, the participants who responded with ‘Strongly Agree’ fall within the mean.</p>
+<p>Thus we shall visualise the response data using a Error bar on dot plot</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Visualisation for Error Bar on Dot plot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>First we create calculated field labeled ‘Proportion that Strongly Agree’.</td>
+<td><img src="Images/error_bar_1.PNG" style="width:75.0%" alt="error_bar_1" /></td>
+</tr>
+<tr class="even">
+<td>Next we create calculated field labeled ‘Proportion (Pro-Vaccine)’.</td>
+<td><img src="Images/error_bar_2.PNG" style="width:75.0%" alt="error_bar_2" /></td>
+</tr>
+<tr class="odd">
+<td>Next we create calculated field labeled ‘Proportion_SE (Pro-Vaccine)’.</td>
+<td><img src="Images/error_bar_3.PNG" style="width:75.0%" alt="error_bar_3" /></td>
+</tr>
+<tr class="even">
+<td>Since we are using a 95% confidence interval, the Z-value is placed into a calculated field labeled ‘Z_95%’.</td>
+<td><img src="Images/error_bar_4.PNG" style="width:75.0%" alt="error_bar_4" /></td>
+</tr>
+<tr class="odd">
+<td>Next we create calculated field labeled ‘Prop Margin of Error 95%’.</td>
+<td><img src="Images/error_bar_5.PNG" style="width:75.0%" alt="error_bar_5" /></td>
+</tr>
+<tr class="even">
+<td>Finally, we create the Upper and lower limits of error.</td>
+<td><img src="Images/error_bar_6.PNG" style="width:75.0%" alt="error_bar_6" /><img src="Images/error_bar_7.PNG" style="width:75.0%" alt="error_bar_7" /></td>
+</tr>
+<tr class="odd">
+<td>We drag and drop ‘Measure Values’ and ‘Proportion (Pro-Vaccine)’ into column and ‘Country’ into rows.</td>
+<td><img src="Images/error_bar_8.PNG" style="width:75.0%" alt="error_bar_8" /></td>
+</tr>
+<tr class="even">
+<td>From ‘Measure Values’ card, we remove all other field except upper and lower limits.</td>
+<td><img src="Images/error_bar_9.PNG" style="width:75.0%" alt="error_bar_9" /></td>
+</tr>
+<tr class="odd">
+<td>Since the Columns have 2 field values, we place them in the same graph using dual axis and syncrhonise them</td>
+<td><img src="Images/error_bar_10.PNG" style="width:75.0%" alt="error_bar_10" /></td>
+</tr>
+<tr class="even">
+<td>In the ‘Measure Values’ mark, we change the option to display as a line.Then, we drag measure names into the path button.Next We filter out all other fields except Prop_Upper limit 95% and Prop_Lower Limit 95%</td>
+<td><img src="Images/error_bar_11.PNG" style="width:75.0%" alt="error_bar_11" /></td>
+</tr>
+<tr class="odd">
+<td>In the ‘Proportion (Pro-Vaccine)’ mark, we change the display to display as a circle and attach ‘Measure Name’ to color so we can change the plot and its color to not clash with the likert scale.</td>
+<td><img src="Images/error_bar_12.PNG" style="width:75.0%" alt="error_bar_12" /></td>
+</tr>
+<tr class="even">
+<td>We Next add the ‘Category Selection’ Field into Rows.</td>
+<td><img src="Images/error_bar_13.PNG" style="width:75.0%" alt="error_bar_13" /></td>
+</tr>
+</tbody>
+</table>
+<p>The Error Bar on Dot plot is finally visualised as seen here. <img src="Images/error_bar_14.PNG" alt="error_bar_14" /></p>
+<h2 id="dashboard"><strong>3.4 Dashboard </strong></h2>
+<p>We are now ready to create our dashboard for analysis.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Dashboard Creation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Within, the sheets used for the dashboard, we display all filters and parameters used. Since they are linked to multiple sheets. It will help in our analysis of the data set.</td>
+<td><img src="Images/Dashboard_1.PNG" style="width:75.0%" alt="Dashboard_1" /></td>
+</tr>
+<tr class="even">
+<td>In the Dashboard sheet, we drag and drop the likert scale and error bar on dot plot.</td>
+<td><img src="Images/Dashboard_2.PNG" style="width:75.0%" alt="Dashboard_2" /></td>
+</tr>
+<tr class="odd">
+<td>Next we rearrange the filters and parameters to be displayed at the top.</td>
+<td><img src="Images/Dashboard_3.PNG" style="width:75.0%" alt="Dashboard_3" /></td>
+</tr>
+</tbody>
+</table>
+<p>The Dashboard is finally visualised as seen here. <img src="Images/Dashboard_4.PNG" alt="Dashboard_4" /></p>
+<hr />
+<h1 id="observations-from-makeover-visualisation"><strong>4. Observations from Makeover Visualisation </strong></h1>
+<p><img src="Images/Analysis%201.PNG" alt="Analysis_1" /> From the above graph, Countries Japan, South Korea, Spain and Singapore had higher percentage of respondents who ‘agree’ or ‘Strongly agreed’ to to being worried about getting the Virus. Where as the remaining countries seem to be ‘split 50-50’ on their opinion.</p>
+<p><img src="Images/Analysis%202.PNG" alt="Analysis_2" /> France and Germany are shown to have high proportion (19.26% and 22.97%) of strongly disagree to taking the vaccine if it was offered in a years time.</p>
+<p><img src="Images/Analysis%203.PNG" alt="Analysis_3" /> UK and Denmark are shown to have higher proportion (48.44% and 50.20%) of respondants who would regret not getting the vaccine. On the other end France has the highest proportion who strongly disagree to this</p>
+<p><img src="Images/Analysis%204.PNG" alt="Analysis_4" /> Within all Countries, there is a higher proprotion of females compared to males who strongly agree that there are potential side effects to the vaccine</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
