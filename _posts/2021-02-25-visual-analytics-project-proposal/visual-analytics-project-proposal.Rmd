@@ -2,7 +2,6 @@
 title: "Visual Analytics Project Proposal"
 description: |
   Understanding Key Stories Covered In the Media and How Readers Engaged With News 
-Listing: Visual Analytics Project
 author:
   - name: Atticus Foo, Gerald Chee & Nam Jihun
     url: https://public.tableau.com/profile/atticusfoo#!/
