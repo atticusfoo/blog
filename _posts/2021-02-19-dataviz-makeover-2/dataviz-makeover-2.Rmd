@@ -5,6 +5,7 @@ description: |
 author:
   - name: Atticus Foo
     url: https://public.tableau.com/profile/atticusfoo#!/
+listing: DataViz Makeover
 date: 02-19-2021
 output:
   distill::distill_article:
