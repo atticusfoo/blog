@@ -13,7 +13,9 @@ output:
     self_contained: false
 ---
 
-![Source: Re-presented](images/A2 Makeoverv1.png)
+```{r, echo=FALSE, out.width="75%", fig.cap="After Makeover.",layout="l-page", fig.width=14, fig.height=10}
+knitr::include_graphics("images/A2 Makeoverv1.png")
+```
 
 # Overview
 
