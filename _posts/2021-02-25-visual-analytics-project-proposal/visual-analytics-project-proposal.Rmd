@@ -13,8 +13,10 @@ output:
     self_contained: false
 ---
 
+```{r, echo=FALSE, out.width="75%", fig.cap="After Makeover.",layout="l-page", fig.width=14, fig.height=10}
+knitr::include_graphics("images/Project Proposal Header.PNG")
+```
 
-![Project Proposal](images/Project Proposal Header.PNG)
 
 # 1.	Motivations and Objective 
 As we become more and more inundated with news from various digital sources today, understanding what the key stories are across the digital spectrum is becoming more and more challenging. 
