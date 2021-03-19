@@ -24,7 +24,7 @@ For the purposes of this data-makeover, we will focus on mapping the geo-spatial
 
 ![Before Makeover](images/1.2 datamakeover1.PNG)
 
-This blogpost will attempt to re-present (makeover) the interactive visualisation as seen in the screenshot above, applying techniques learned in Professor Kam’s class on geo-spatial visualisations. The link to the interactive visualisation can be found [here] (https://public.tableau.com/views/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis?:language=en&:display_count=y&:origin=viz_share_link). The following sections can be found below:   
+This blogpost will attempt to re-present (makeover) the interactive [visualisation](https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis) as seen in the screenshot above, applying techniques learned in Professor Kam’s class on geo-spatial visualisations. The following sections can be found below:   
 
 •	1 Assessment of visualisation based on clarity, aesthetics and interactivity 
 •	2 Sketch of alternate design 
