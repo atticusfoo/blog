@@ -13,10 +13,7 @@ output:
     self_contained: false
 ---
 
-
-```{r, echo=FALSE, out.width="75%", fig.cap="After Makeover.",layout="l-page", fig.width=14, fig.height=10}
-knitr::include_graphics("images/1.1 Madeover.PNG")
-```
+![After Makeover](images/1.1 Madeover.PNG)
 
 # Overview 
     
