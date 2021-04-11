@@ -2134,10 +2134,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><a href="#methods-for-presenting-snapshot">3.Methods for Presenting Snapshot</a>
 <ul>
 <li><a href="#objective-1-explore---sorting-through-and-identifying-key-events-in-large-corpus-of-news">3.1.<strong>Objective 1: Explore</strong> - Sorting through and identifying key events in large corpus of news</a></li>
-<li><a href="#objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-sentiment">3.2.<strong>Objective 2: Discover</strong> -] Providing greater detail and context about a topic / news source using sentiment</a></li>
-<li><a href="#objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-word-networks-and-co-occurrences">3.3.<strong>Objective 2: Discover</strong> - Providing greater detail and context about a topic / news source using word networks and co-occurrences</a>
+<li><a href="#objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source">3.2.<strong>Objective 2: Discover</strong> - Providing greater detail and context about a topic / news source</a>
 <ul>
-<li><a href="#co-occurrences">Co-Occurrences</a></li>
+<li><a href="#using-sentiment">3.2.1 USing Sentiment</a></li>
+<li><a href="#using-wordnetworks">3.2.2 USing WordNetworks</a></li>
+<li><a href="#using-word-co-occurences">3.2.2 USing Word Co-occurences</a></li>
 </ul></li>
 <li><a href="#objective-3-detect---providing-alerts-to-unusual-patterns-in-news-analysis">3.4.<strong>Objective 3: Detect</strong> - Providing alerts to unusual patterns in news analysis</a></li>
 </ul></li>
@@ -2402,7 +2403,8 @@ corpus_explorer &lt;-
 </figure>
 <p>The Coporaexplorer package is able to handle the 91k articles quickly and allows for readers to search the entire corpus by (up to 5) keywords. Selecting a specific day in the Coporaexplorer plot allows readers to then discover more about the selected article / document. This includes the corresponding engagement data regarding the article’s reach and URL and allows readers to meet the goal of quickly sorting through a large corpus of news events by time, topic and keyword.</p>
 <p>More detail regarding the module for Objective 1 can be found at the project blog here.</p>
-<h3 id="objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-sentiment">3.2.<strong>Objective 2: Discover</strong> -] Providing greater detail and context about a topic / news source using sentiment</h3>
+<h3 id="objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source">3.2.<strong>Objective 2: Discover</strong> - Providing greater detail and context about a topic / news source</h3>
+<h4 id="using-sentiment">3.2.1 USing Sentiment</h4>
 <p>The second objective to use statistical methods to provide greater detail and context around each topic and news source can be done through sentiment analysis. This will allow readers to understand the value of the sentiment attached to the topic or media source and observe its changes across time.</p>
 <p>There are several sentiment analysis packages available including syuzhet and <a href="https://cran.r-project.org/web/packages/sentimentr/readme/README.html">sentimentr</a>. Lexicons that are available for sentiment analysis include “Bing”, “AFINN” and [“NRC”])(<a href="https://hoyeolkim.wordpress.com/2018/02/25/the-limits-of-the-bing-afinn-and-nrc-lexicons-with-the-tidytext-package-in-r/" class="uri">https://hoyeolkim.wordpress.com/2018/02/25/the-limits-of-the-bing-afinn-and-nrc-lexicons-with-the-tidytext-package-in-r/</a>).</p>
 <pre class="{r}&#39;&#39;`"><code>install.packages(“sentimentr”, “GGally”, “glue”, “reshape2”)
@@ -2494,8 +2496,7 @@ Summary(teststock3.lm)</code></pre>
 <img src="images/mlr%20stock.PNG" alt="MLR Results" /><figcaption aria-hidden="true">MLR Results</figcaption>
 </figure>
 <p>The results for the multiple regression model demonstrate that there is significant collinearity between negative media sentiment and the closing stock prices of the SGX daily. As seen in the results, news events and headlines should be analyzed in greater detail because they can have very real and tangible impact.</p>
-<h3 id="objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-word-networks-and-co-occurrences">3.3.<strong>Objective 2: Discover</strong> - Providing greater detail and context about a topic / news source using word networks and co-occurrences</h3>
-<p>Word network</p>
+<h4 id="using-wordnetworks">3.2.2 USing WordNetworks</h4>
 <p>Another method explored for allowing users to read in greater detail, the different topics and news sources, is the analysis and visualization of word structure. This can be done by analyzing the word graph or word networks relating to the topic or media source. Word analysis using statistical methods can be very use in helping to track and visualize the evolution of <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0122174">news</a>, and demonstrate how differently each media has covered a <a href="https://towardsdatascience.com/measuring-discourse-bias-using-text-network-analysis-9f251be5f6f3">topic</a>.</p>
 <p>Using R packages such as tidytext, dplyr, igraph and ggraph, we can <a href="https://www.tidytextmining.com/ngrams.html">plot</a> the word networks related to different topics in the corpus.</p>
 <pre class="{r}&#39;&#39;`"><code>install.packages(“tidytext”, “dplyr”, “igraph”, “ggraph”)
@@ -2539,7 +2540,7 @@ geom_node_text(aes(label = name), vjust = 1, hjust = 1)</code></pre>
 <img src="images/cooccurrence.PNG" alt="Co-occurrences across different texts" /><figcaption aria-hidden="true">Co-occurrences across different texts</figcaption>
 </figure>
 <p>Unfortunately, this visualization of presenting sets is more useful when the number of documents in the text is small. Visualizing this over 96k articles will be less helpful, even after aggregation into different topics. An alternative approach of visualizing co-occurrence is explore in the next section.</p>
-<h4 id="co-occurrences">Co-Occurrences</h4>
+<h4 id="using-word-co-occurences">3.2.2 USing Word Co-occurences</h4>
 <p>Finally, using the tri-grams identified in the text, we are able to visualize how any two words in a selected corpus is used, where they are similar and where they <a href="https://www.chrisharrison.net/index.php/Visualizations/WebTrigrams">diverge</a>. Research into empirical <a href="https://www.researchgate.net/publication/285764383_Collocations_and_statistical_analysis_of_n-grams_Multiword_expressions_in_newspaper_text">linguistics</a> have identified how the frequency of words occurring together can give insight and meaning to the treatment of a topic and the ‘closeness’ of association between entities. This can help readers understand the context to how words in media coverage was used when compared to <a href="https://www.hvitfeldt.me/blog/visualizing-trigrams-with-the-tidyverse/">each other</a>.</p>
 <p>For this segment, we were inspired by the work of <a href="https://www.chrisharrison.net/index.php/Visualizations/WebTrigrams">Chris Harissson</a> and <a href="https://github.com/EmilHvitfeldt">Emil Hvitfeldt</a>. We will need to call on the packages of purrrlyr for this next visualization. The code below is attributed to <a href="https://www.hvitfeldt.me/blog/visualizing-trigrams-with-the-tidyverse/">Emil Hvitfeldt</a>.</p>
 <pre class="{r}&#39;&#39;`"><code>install.pacakges(“purrrlyr”)
