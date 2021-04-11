@@ -13,7 +13,7 @@ output:
     self_contained: false
 ---
 
-```{r, echo=FALSE, out.width="75%", fig.cap="After Makeover.",layout="l-page", fig.width=14, fig.height=10}
+```{r, echo=FALSE, out.width="50%", fig.cap="Data Re-presented.",layout="m-page", fig.width=8, fig.height=4}
 knitr::include_graphics("images/A2 Makeoverv1.png")
 ```
 
