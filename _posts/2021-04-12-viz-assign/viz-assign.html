@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>IDENTIFYING TOPICS OF NEWS HEADLINES</title>
+
+  <meta property="description" itemprop="description" content="Topic Modeling of News Headlines from January 2020 to December 2020"/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-04-11"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-04-11"/>
+  <meta name="article:author" content="Chee Kah Wen Gerald"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="IDENTIFYING TOPICS OF NEWS HEADLINES"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Topic Modeling of News Headlines from January 2020 to December 2020"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="IDENTIFYING TOPICS OF NEWS HEADLINES"/>
+  <meta property="twitter:description" content="Topic Modeling of News Headlines from January 2020 to December 2020"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["IDENTIFYING TOPICS OF NEWS HEADLINES"]},{"type":"character","attributes":{},"value":["Topic Modeling of News Headlines from January 2020 to December 2020\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Chee Kah Wen Gerald"]},{"type":"NULL"}]}]},{"type":"character","attributes":{},"value":["04-11-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[6]},{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["data/All_media.csv","data/All_media_cleaned.csv","data/LDAvis.html","data/LDAvis_files/d3.v3.js.download","data/LDAvis_files/lda.css","data/LDAvis_files/ldavis.js.download","data/number of topics.png","data/Proposed visualisation.jpeg","data/top_30_words.csv","data/tsneplot.jpeg","data/zeroten.csv","viz-assign_files/figure-html5/unnamed-chunk-15-1.png","viz-assign_files/figure-html5/unnamed-chunk-16-1.png","viz-assign_files/figure-html5/unnamed-chunk-17-1.png","viz-assign_files/figure-html5/unnamed-chunk-18-1.png"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="viz-assign_files/header-attrs-2.7/header-attrs.js"></script>
+  <script src="viz-assign_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="viz-assign_files/popper-2.6.0/popper.min.js"></script>
+  <link href="viz-assign_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="viz-assign_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="viz-assign_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="viz-assign_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="viz-assign_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="viz-assign_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="viz-assign_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"IDENTIFYING TOPICS OF NEWS HEADLINES","description":"Topic Modeling of News Headlines from January 2020 to December 2020","authors":[{"author":"Chee Kah Wen Gerald","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-11T00:00:00.000+08:00","citationText":"Gerald, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>IDENTIFYING TOPICS OF NEWS HEADLINES</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Topic Modeling of News Headlines from January 2020 to December 2020</p></p>
+</div>
+
+<div class="d-byline">
+  Chee Kah Wen Gerald  
+  
+<br/>04-11-2021
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#overview"><strong>1. Overview</strong></a></li>
+<li><a href="#analysing-news-headlines"><strong>2. Analysing News Headlines</strong></a>
+<ul>
+<li><a href="#importing-data"><strong>2.1 Importing Data</strong></a>
+<ul>
+<li><a href="#installing-and-lauching-r-packages"><strong>Installing and Lauching R packages</strong></a></li>
+<li><a href="#importing-dataset-into-r-using-readr-from-tidyverse"><strong>Importing dataset into R using readr from tidyverse</strong></a></li>
+</ul></li>
+<li><a href="#text-analysis"><strong>2.2 Text Analysis</strong></a>
+<ul>
+<li><a href="#using-stringr-and-textclean-package-for-cleaning-and-adding-to-new-column-in-data-frame"><strong>Using “stringr” and “textclean” package for cleaning and adding to new column in data frame</strong></a></li>
+<li><a href="#using-tmtextminer-package-for-creating-the-document-term-matrix-and-lda-model"><strong>Using “tm”/“textmineR” package for creating the Document-Term Matrix and LDA model</strong></a></li>
+<li><a href="#using-textminer-package-for-creating-the-document-term-matrix-and-lda-model"><strong>Using “textmineR” package for creating the Document-Term Matrix and LDA model</strong></a></li>
+<li><a href="#finding-the-top-30-terms-of-each-topic"><strong>Finding the top 30 terms of each topic</strong></a></li>
+<li><a href="#finding-the-most-probable-topic-of-each-document"><strong>Finding the most probable topic of each document</strong></a></li>
+</ul></li>
+<li><a href="#discovering-the-text"><strong>2.3 Discovering the Text</strong></a></li>
+</ul></li>
+<li><a href="#proposed-visualisation"><strong>3. Proposed Visualisation</strong></a></li>
+<li><a href="#conclusion"><strong>4.Conclusion</strong></a></li>
+</ul>
+</nav>
+</div>
+<h2 id="overview"><strong>1. Overview</strong></h2>
+<p>On a daily basis, singaporeans consume media from both traditional and online sources(Qi, Dunsford, &amp; Nair, 2020).Media reporting can contribute to the public’s understanding of safe distancing measures during COVID-19. As such, analysing news headlines would be a quick and useful in understanding current affairs. However, making sense of the news is extremely difficult because (1) huge volumes of articles are published from multiple media sources, (2) extracting topics and information from each article is not easy, (3) the importance of what people think and what the media think can be different.</p>
+<p>The following blogpost will elaborate further our project’s objectives, explore current practices, and prototype methods in order to help readers navigate the digital news landscape. This project aims to analyse local news headlines published in 2020 and provide readers with useful snapshots of news trend. The scope of this project is to visualise the trends of published headlines over time by topics and by media sites.</p>
+<p>Analysing engagement metrics (the number of Likes, Shares, and Comments in social media) from each article would be helpful to understand the interests of the public and what the ’hot topic is.</p>
+<h2 id="analysing-news-headlines"><strong>2. Analysing News Headlines</strong></h2>
+<p>Dataset extracted from Prrt contains date of publishing,news headlines, site lnks, and Facebook Engagement metrics (Likes, Shares and Comments) for the time frame 1 January 2020 to 31 December 2020. These news articles were published by local media sites, a mix of mainstream (Straits Times, Channel News Asia, AsiaOne) and non-mainstream (Mothership, MustShareNews, The Independent) sites.</p>
+<p>From the raw data (224k articles), we decided to filter out articles whose engagement was lower than 10 interactions. Doing this reduces the number of articles in the dataset and removes articles that were: (1) removed quickly after A/B testing, (2) removed quickly after editorial corrections, and (3) republished from international news wire agencies and therefore had low to no engagement Finally, 93,166 articles will be used for further analysis.</p>
+<h3 id="importing-data"><strong>2.1 Importing Data</strong></h3>
+<p>Before we can begin text processing, we will need to employ text cleaning to reduce noise to optimize results. Examples of <a href="https://towardsdatascience.com/text-cleaning-methods-for-natural-language-processing-f2fc1796e8c7">‘noise’</a> include <strong>special characters</strong>, <strong>punctuation</strong>, <strong>common words</strong> and <strong>typographical errors</strong>.</p>
+<h4 id="installing-and-lauching-r-packages"><strong>Installing and Lauching R packages</strong></h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>packages</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"tidyverse"</span>,<span class='st'>"tidytext"</span>,<span class='st'>"dplyr"</span>,<span class='st'>"ggplot2"</span>,<span class='st'>"broom"</span>,<span class='st'>"stringr"</span>,<span class='st'>"LDAvis"</span>,<span class='st'>"textclean"</span>,<span class='st'>"textmineR"</span>,<span class='st'>"stopwords"</span><span class='op'>)</span>
+
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>p</span> <span class='kw'>in</span> <span class='va'>packages</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='kw'>if</span><span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'>p</span>, character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='va'>p</span><span class='op'>)</span>
+  <span class='op'>}</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>p</span>, character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<h4 id="importing-dataset-into-r-using-readr-from-tidyverse"><strong>Importing dataset into R using readr from tidyverse</strong></h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#reading All_media data set</span>
+<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/All_media.csv"</span><span class='op'>)</span>
+
+
+<span class='co'>#formatting date and adding/renaming columns</span>
+<span class='va'>test</span><span class='op'>$</span><span class='va'>Published</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>Published</span>, format<span class='op'>=</span><span class='st'>"%d/%m/%Y"</span><span class='op'>)</span>
+<span class='va'>test</span><span class='op'>&lt;-</span><span class='va'>test</span><span class='op'>%&gt;%</span>
+  <span class='fu'>add_column</span><span class='op'>(</span>Doc_ID<span class='op'>=</span><span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>)</span>,.before <span class='op'>=</span> <span class='st'>'Published'</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'>rename</span><span class='op'>(</span>`Total`<span class='op'>=</span><span class='va'>`Facebook Interactions`</span>,`Likes`<span class='op'>=</span><span class='va'>`Facebook Likes`</span>,`Shares`<span class='op'>=</span><span class='va'>`Facebook Shares`</span>,`Comments`<span class='op'>=</span><span class='va'>`Facebook Comments`</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>test</span>,<span class='fl'>10</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="text-analysis"><strong>2.2 Text Analysis</strong></h3>
+<p>Before we can begin text processing, we will need to employ text cleaning to reduce noise to optimize results. Examples of <a href="https://towardsdatascience.com/text-cleaning-methods-for-natural-language-processing-f2fc1796e8c7">‘noise’</a> include <strong>special characters</strong>, <strong>punctuation</strong>, <strong>common words</strong> and <strong>typographical errors</strong>.</p>
+<p>As most packages for cleaning text data are built around lowercase characters, the order of the cleaning process is important. (To note, News Headlines are formal in nature. However, depending on the news source, informal language might be used to create a eye-catching headline. Thus line 3 of the below code chunk is included)</p>
+<h4 id="using-stringr-and-textclean-package-for-cleaning-and-adding-to-new-column-in-data-frame"><strong>Using “stringr” and “textclean” package for cleaning and adding to new column in data frame</strong></h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span><span class='op'>$</span><span class='va'>Cleaned</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/chartr.html'>tolower</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>Headline</span><span class='op'>)</span><span class='op'>%&gt;%</span><span class='co'>#convert to lowercase</span>
+  <span class='fu'>replace_contraction</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'>#lengthening words (eg,isn't -&gt; is not)</span>
+  <span class='fu'>replace_word_elongation</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'>#reducing informal writing (eg,heyyyyyyy -&gt; hey)</span>
+  <span class='fu'>str_replace_all</span><span class='op'>(</span><span class='st'>"[0-9]"</span>, <span class='st'>" "</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'>#removing numbers</span>
+  <span class='fu'>str_replace_all</span><span class='op'>(</span><span class='st'>"[^[:alnum:]]"</span>,<span class='st'>" "</span><span class='op'>)</span><span class='op'>%&gt;%</span><span class='co'>#remove punctuation/symbols</span>
+  <span class='fu'>str_replace_all</span><span class='op'>(</span><span class='st'>"covid|wuhan virus"</span>,<span class='st'>"coronavirus"</span><span class='op'>)</span><span class='op'>%&gt;%</span><span class='co'>#word substitution to a recognisable word</span>
+  <span class='fu'>str_replace_all</span><span class='op'>(</span><span class='st'>"\\b[[:alpha:]]\\b"</span>,<span class='st'>" "</span><span class='op'>)</span><span class='op'>%&gt;%</span><span class='co'>#remove single letter</span>
+  <span class='fu'>str_squish</span><span class='op'>(</span><span class='op'>)</span><span class='op'>%&gt;%</span> <span class='co'>#reduce repeated whitespace </span>
+  <span class='va'>str_trim</span><span class='co'>#removes whitespace from start and end of string</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>Cleaned</span>,<span class='fl'>15</span><span class='op'>)</span>
+
+<span class='co'># Create own set of stopwords</span>
+<span class='va'>stopwords_mod</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fu'>stopwords</span><span class='op'>(</span><span class='st'>'en'</span><span class='op'>)</span>,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'covid'</span>,<span class='st'>'virus'</span>,<span class='st'>'coronavirus'</span>,<span class='st'>'singapore'</span>,<span class='st'>"singapore's"</span>,<span class='st'>'spore'</span>,<span class='st'>'first'</span>,
+                                   <span class='st'>'second'</span>, <span class='st'>'one'</span>, <span class='st'>'two'</span>, <span class='st'>'three'</span>, <span class='st'>'four'</span>, <span class='st'>'another'</span>,<span class='st'>'get'</span>,<span class='st'>'gets'</span>, <span class='st'>'got'</span>,
+                                   <span class='st'>'last'</span>, <span class='st'>'least'</span>, <span class='st'>'just'</span>, <span class='st'>'will'</span>, <span class='st'>'week'</span>,<span class='st'>'weeks'</span>,
+                                   <span class='st'>'ago'</span>, <span class='st'>'day'</span>, <span class='st'>'days'</span>, <span class='st'>'night'</span>, <span class='st'>'nights'</span>, <span class='st'>'month'</span>,<span class='st'>'months'</span>,
+                                   <span class='st'>'years'</span>, <span class='st'>'year'</span>, <span class='st'>'next'</span>, <span class='st'>'now'</span>, <span class='st'>'today'</span>,<span class='st'>'yesterday'</span>,<span class='st'>'according'</span>,
+                                   <span class='st'>'back'</span>, <span class='st'>'say'</span>, <span class='st'>'says'</span>,<span class='st'>'said'</span>, <span class='st'>'make'</span>, <span class='st'>'made'</span>, <span class='st'>'reuters'</span>, <span class='st'>'monday'</span>,
+                                   <span class='st'>'tuesday'</span>,<span class='st'>'wednesday'</span>, <span class='st'>'thursday'</span>, <span class='st'>'friday'</span>,
+                                   <span class='st'>'saturday'</span>,<span class='st'>'sunday'</span>,<span class='st'>'quite'</span>,<span class='st'>'via'</span>,<span class='st'>'use'</span>,
+                                   <span class='st'>'go'</span>,<span class='st'>'still'</span>,<span class='st'>'pore'</span><span class='op'>)</span><span class='op'>)</span>
+
+
+<span class='co'>#remove stopwords and paste into column</span>
+<span class='va'>test</span><span class='op'>$</span><span class='va'>Cleaned</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/unlist.html'>unlist</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>Cleaned</span>,
+                            <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>{</span>
+                              <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/unlist.html'>unlist</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/strsplit.html'>strsplit</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='st'>" "</span><span class='op'>)</span><span class='op'>)</span><span class='op'>[</span><span class='op'>!</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/unlist.html'>unlist</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/strsplit.html'>strsplit</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='st'>" "</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%in%</span> <span class='va'>stopwords_mod</span><span class='op'>)</span><span class='op'>]</span>,
+                                    collapse<span class='op'>=</span><span class='st'>" "</span><span class='op'>)</span><span class='op'>}</span>
+<span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#writing the cleaned data to a new CSV</span>
+<span class='co'>#write_csv(test,"data/All_media_cleaned.csv")</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/All_media_cleaned.csv"</span><span class='op'>)</span>
+<span class='co'>#creating df for headlines with above 10 interactions</span>
+<span class='va'>df_10</span><span class='op'>&lt;-</span><span class='va'>test</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Total</span><span class='op'>&gt;=</span><span class='fl'>10</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>df_10</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6 x 10
+  Doc_ID Published  Headline  Link  Total Likes Shares Comments Source
+   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; 
+1      1 2020-04-22 Man turn~ http~  8124  6567   1229      328 Asiao~
+2      2 2020-04-16 Woman wh~ http~  6567  3925    645     1997 Asiao~
+3      3 2020-04-17 &#39;Stop ye~ http~  3866  1911    614     1341 Asiao~
+4      4 2020-04-22 Dorm man~ http~  2825  1933    570      322 Asiao~
+5      5 2020-04-20 Singapor~ http~  2258  1324    283      651 Asiao~
+6      6 2020-04-20 &#39;You are~ http~  2146  1829    223       94 Asiao~
+# ... with 1 more variable: Cleaned &lt;chr&gt;</code></pre>
+</div>
+<h4 id="using-tmtextminer-package-for-creating-the-document-term-matrix-and-lda-model"><strong>Using “tm”/“textmineR” package for creating the Document-Term Matrix and LDA model</strong></h4>
+<p>Here, we use the Latent Dirichlet Allocation (LDA) algorithim to indentify topics. LDA is a generative probabilistic model of a corpus. The idea behind LDA is that (1)every document is a mixture of topics (2)every topic is a mixture of words.</p>
+<p>A simplified explanatation of point (1) would be that a document may consists of 30% economics, 60% politics, and 10% social topic and a higher probability means that the document can be represented by the topic.</p>
+<p>According to the point (2), a topic is a mixture of words, where a certain words have a strong association with a certain topic. For example, the word President have a strong signal that it belong to the topic of politics, or the word Loan and Interest have a strong signal toward economics topic. Just as a document has a probability distribution for each topic, a topic also has a probability distribution for each words/terms.</p>
+<p>LDA assume that a document is a bag of words, thus we do not care about the word sequence.Thus, we can apply this unsupervised model to find latent topics.</p>
+<p>However, we would need to determine the number of topics for analysis. Work has been done by <a href="https://knowledger.rbind.io/post/topic-modeling-using-r/">David Meza</a> determine k number of topics using harmonic mean. Harmonic mean is often used as an aggregated performance score for the evaluation of algorithms and systems: the F-score (or F-measure).</p>
+<p>In our case, we will calculate the harmonic mean based on the log-likelihood function calculated by the LDA algorithim of the ‘tm’ package.The likelihood function measures the goodness of fit of a statistical model to a sample of data for given values of unknown parameters.It is formed from the joint probability distribution of the sample,it describes a hypersurface whose peak, if it exists, represents the combination of model parameter values that maximize the probability of obtaining the most probable sample.</p>
+<p>Since logarithm equations are increasing functions, maximising the likelihood values is similar to maximising log-likelihood values as recorded by the LDA function. Thus this would be applicable to finding out the number of topics our model should have.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tm.r-forge.r-project.org/'>tm</a></span><span class='op'>)</span>
+
+<span class='co'>#creating the corpus for casting into document term matrix</span>
+<span class='va'>corpus</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/tm/man/Corpus.html'>Corpus</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/tm/man/VectorSource.html'>VectorSource</a></span><span class='op'>(</span><span class='va'>df_10</span><span class='op'>$</span><span class='va'>Cleaned</span><span class='op'>)</span>, readerControl<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>language<span class='op'>=</span><span class='st'>"en"</span><span class='op'>)</span><span class='op'>)</span><span class='co'>#variable will be diff</span>
+
+
+<span class='co'># compute document term matrix with terms &gt;= minimumFrequency</span>
+<span class='va'>minimumFrequency</span> <span class='op'>&lt;-</span> <span class='fl'>1</span>
+<span class='va'>DTM</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/tm/man/matrix.html'>DocumentTermMatrix</a></span><span class='op'>(</span><span class='va'>corpus</span>, control <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>bounds <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>global <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>minimumFrequency</span>, <span class='cn'>Inf</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='co'># have a look at the number of documents and terms in the matrix</span>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>DTM</span><span class='op'>)</span>
+
+<span class='co'># due to vocabulary pruning, we have empty rows in our DTM</span>
+<span class='co'># LDA does not like this. So we remove those docs from the</span>
+<span class='co'># DTM and the metadata</span>
+<span class='va'>sel_idx</span> <span class='op'>&lt;-</span> <span class='fu'>row_sums</span><span class='op'>(</span><span class='va'>DTM</span><span class='op'>)</span> <span class='op'>&gt;</span> <span class='fl'>0</span>
+<span class='va'>DTM</span> <span class='op'>&lt;-</span> <span class='va'>DTM</span><span class='op'>[</span><span class='va'>sel_idx</span>, <span class='op'>]</span>
+
+<span class='co'>#find ideal k </span>
+<span class='va'>harmonicMean</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>logLikelihoods</span>, <span class='va'>precision</span> <span class='op'>=</span> <span class='fl'>2000L</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='va'>llMed</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/median.html'>median</a></span><span class='op'>(</span><span class='va'>logLikelihoods</span><span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/double.html'>as.double</a></span><span class='op'>(</span><span class='va'>llMed</span> <span class='op'>-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'>mpfr</span><span class='op'>(</span><span class='va'>logLikelihoods</span>,
+                                       prec <span class='op'>=</span> <span class='va'>precision</span><span class='op'>)</span> <span class='op'>+</span> <span class='va'>llMed</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='co'># creating sequence of 2 to 100 by 1 step interval</span>
+<span class='co'>#using a burn in of 500 and iterating 5000 times. `Keep’ indicates that every keep iteration the log-likelihood is evaluated and stored. The log-likelihood values are then determined by first fitting the model. This returns all log-likelihood values including burn-in, i.e., these need to be omitted before calculating the harmonic mean:</span>
+<span class='va'>seqk</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>2</span>, <span class='fl'>100</span>, <span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>burnin</span> <span class='op'>&lt;-</span> <span class='fl'>500</span>
+<span class='va'>iter</span> <span class='op'>&lt;-</span> <span class='fl'>500</span>
+<span class='va'>keep</span> <span class='op'>&lt;-</span> <span class='fl'>50</span>
+
+<span class='co'>#displaying time taken for running models (Approximately 10hours on 2.3GHz quad core computer with 16gb ram)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span><span class='op'>(</span><span class='va'>fitted_many</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>seqk</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>k</span><span class='op'>)</span> <span class='fu'>LDA</span><span class='op'>(</span><span class='va'>DTM</span>, k <span class='op'>=</span> <span class='va'>k</span>,
+                                                                     method <span class='op'>=</span> <span class='st'>"Gibbs"</span>,control <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>burnin <span class='op'>=</span> <span class='va'>burnin</span>,
+                                                                                                     iter <span class='op'>=</span> <span class='va'>iter</span>, keep <span class='op'>=</span> <span class='va'>keep</span><span class='op'>)</span> <span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'># extract logliks from each topic</span>
+<span class='va'>logLiks_many</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='va'>fitted_many</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>L</span><span class='op'>)</span>  <span class='va'>L</span><span class='op'>@</span><span class='va'>logLiks</span><span class='op'>[</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='op'>(</span><span class='va'>burnin</span><span class='op'>/</span><span class='va'>keep</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>logLiks_many</span>
+<span class='co'># compute harmonic means</span>
+<span class='va'>hm_many</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span><span class='op'>(</span><span class='va'>logLiks_many</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>h</span><span class='op'>)</span> <span class='fu'>harmonicMean</span><span class='op'>(</span><span class='va'>h</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>hm_many</span>
+
+<span class='co'>#plotting of harmonic means for modelling</span>
+<span class='va'>ldaplot</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span><span class='va'>seqk</span>, <span class='va'>hm_many</span><span class='op'>)</span>, <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>seqk</span>, y<span class='op'>=</span><span class='va'>hm_many</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'>geom_path</span><span class='op'>(</span>lwd<span class='op'>=</span><span class='fl'>1.5</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme</span><span class='op'>(</span>text <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>family<span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>,
+        axis.title.y<span class='op'>=</span><span class='fu'>element_text</span><span class='op'>(</span>vjust<span class='op'>=</span><span class='fl'>1</span>, size<span class='op'>=</span><span class='fl'>16</span><span class='op'>)</span>,
+        axis.title.x<span class='op'>=</span><span class='fu'>element_text</span><span class='op'>(</span>vjust<span class='op'>=</span><span class='op'>-</span><span class='fl'>.5</span>, size<span class='op'>=</span><span class='fl'>16</span><span class='op'>)</span>,
+        axis.text<span class='op'>=</span><span class='fu'>element_text</span><span class='op'>(</span>size<span class='op'>=</span><span class='fl'>16</span><span class='op'>)</span>,
+        plot.title<span class='op'>=</span><span class='fu'>element_text</span><span class='op'>(</span>size<span class='op'>=</span><span class='fl'>20</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>xlab</span><span class='op'>(</span><span class='st'>'Number of Topics'</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>ylab</span><span class='op'>(</span><span class='st'>'Harmonic Mean'</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>ggtitle</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/expression.html'>expression</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/grDevices/plotmath.html'>atop</a></span><span class='op'>(</span><span class='st'>"Latent Dirichlet Allocation Analysis of News Topics"</span>, <span class='fu'><a href='https://rdrr.io/r/grDevices/plotmath.html'>atop</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/grDevices/plotmath.html'>italic</a></span><span class='op'>(</span><span class='st'>"How many distinct topics in the headlines?"</span><span class='op'>)</span>, <span class='st'>""</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>ldaplot</span>
+
+<span class='co'>#finding max value</span>
+<span class='va'>seqk</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.min.html'>which.max</a></span><span class='op'>(</span><span class='va'>hm_many</span><span class='op'>)</span><span class='op'>]</span>
+</code></pre>
+</div>
+</div>
+<figure>
+<img src="data/number%20of%20topics.png" style="width:75.0%" alt="Topics for modeling" /><figcaption aria-hidden="true">Topics for modeling</figcaption>
+</figure>
+<p>From the plot, our function determined that 39 topics would be ideal. However it would be time consuming and impractical. Thus we chose to do 20 topics instead.</p>
+<h4 id="using-textminer-package-for-creating-the-document-term-matrix-and-lda-model"><strong>Using “textmineR” package for creating the Document-Term Matrix and LDA model</strong></h4>
+<p>Based on the code above the sparse document term matrix was created. The ‘tm’ package dtm function will create a sparse matrix for the tokens in each topic by the count. However since the matrix is 100% sparse (meaning some rows have 0 values likely due to the cleaning process), we will use the ‘textmineR’ package for its dtm and lda functions</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#create dtm</span>
+<span class='va'>dtm</span><span class='op'>&lt;-</span> <span class='fu'>CreateDtm</span><span class='op'>(</span><span class='va'>df_10</span><span class='op'>$</span><span class='va'>Cleaned</span><span class='op'>)</span>
+
+<span class='co'>#set seed to get consistent results</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span>
+<span class='va'>lda</span><span class='op'>&lt;-</span> <span class='fu'>FitLdaModel</span><span class='op'>(</span><span class='va'>dtm</span>,k<span class='op'>=</span><span class='fl'>20</span>,iterations <span class='op'>=</span> <span class='fl'>500</span><span class='op'>)</span>
+
+<span class='fu'>SummarizeTopics</span><span class='op'>(</span><span class='va'>lda</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Based on the model run, a visualisation can be created for the lda model using the ‘LDAvis’ package. The below code and HTML embedding showcases how to use this tool. However due to a <a href="https://github.com/cpsievert/LDAvis/issues/97">discrepancy</a> between ‘textmineR’ and ‘LDAvis’ indexing, the topics ‘t_1’ does not correspond to ‘Topic 1’ of ‘LDAvis’. For the final shinyapp, we will look into how to rectify this issue as there is still value in how this app shows prevalent words in the topics</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>textmineR2LDAvis</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='kw'>if</span> <span class='op'>(</span><span class='st'>"lda_topic_model"</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+    <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>$</span><span class='va'>theta</span><span class='op'>)</span> <span class='op'>&lt;</span> <span class='fl'>3</span><span class='op'>)</span> <span class='kw'><a href='https://rdrr.io/r/base/stop.html'>stop</a></span><span class='op'>(</span><span class='st'>"The model must contain &gt; 2 topics"</span><span class='op'>)</span>
+    <span class='va'>ldavis</span> <span class='op'>&lt;-</span> <span class='fu'>LDAvis</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/LDAvis/man/createJSON.html'>createJSON</a></span><span class='op'>(</span>
+      phi <span class='op'>=</span> <span class='va'>model</span><span class='op'>$</span><span class='va'>phi</span>, 
+      theta <span class='op'>=</span> <span class='va'>model</span><span class='op'>$</span><span class='va'>theta</span>,
+      vocab <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>$</span><span class='va'>phi</span><span class='op'>)</span>,
+      doc.length <span class='op'>=</span> <span class='fu'>slam</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/slam/man/sums.html'>row_sums</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>$</span><span class='va'>data</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+      term.frequency <span class='op'>=</span> <span class='fu'>slam</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/slam/man/sums.html'>col_sums</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>$</span><span class='va'>data</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='op'>}</span> <span class='kw'>else</span> <span class='kw'>if</span> <span class='op'>(</span><span class='st'>"LDA_VEM"</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span> <span class='co'>#Taken from https://gist.github.com/trinker/477d7ae65ff6ca73cace</span>
+    <span class='va'>post</span> <span class='op'>&lt;-</span> <span class='fu'>topicmodels</span><span class='fu'>::</span><span class='fu'>posterior</span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>
+    <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span><span class='op'>(</span><span class='va'>post</span><span class='op'>[[</span><span class='st'>"topics"</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'>&lt;</span> <span class='fl'>3</span><span class='op'>)</span> <span class='kw'><a href='https://rdrr.io/r/base/stop.html'>stop</a></span><span class='op'>(</span><span class='st'>"The model must contain &gt; 2 topics"</span><span class='op'>)</span>
+    <span class='va'>mat</span> <span class='op'>&lt;-</span> <span class='va'>model</span><span class='op'>@</span><span class='va'>wordassignments</span>
+    <span class='va'>ldavis</span> <span class='op'>&lt;-</span> <span class='fu'>LDAvis</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/LDAvis/man/createJSON.html'>createJSON</a></span><span class='op'>(</span>
+      phi <span class='op'>=</span> <span class='va'>post</span><span class='op'>[[</span><span class='st'>"terms"</span><span class='op'>]</span><span class='op'>]</span>, 
+      theta <span class='op'>=</span> <span class='va'>post</span><span class='op'>[[</span><span class='st'>"topics"</span><span class='op'>]</span><span class='op'>]</span>,
+      vocab <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>post</span><span class='op'>[[</span><span class='st'>"terms"</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>,
+      doc.length <span class='op'>=</span> <span class='fu'>slam</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/slam/man/sums.html'>row_sums</a></span><span class='op'>(</span><span class='va'>mat</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+      term.frequency <span class='op'>=</span> <span class='fu'>slam</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/slam/man/sums.html'>col_sums</a></span><span class='op'>(</span><span class='va'>mat</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/stop.html'>stop</a></span><span class='op'>(</span><span class='st'>"Class of topic model not recognised. Must be of class LDA_VEM or lda_topic_model"</span><span class='op'>)</span>
+  <span class='op'>}</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>ldavis</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+<span class='fu'>LDAvis</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/LDAvis/man/serVis.html'>serVis</a></span><span class='op'>(</span><span class='fu'>textmineR2LDAvis</span><span class='op'>(</span><span class='va'>lda</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><iframe title="test" src="data/LDAvis.html" width="1000" height="1000"></iframe></p>
+</div>
+<h4 id="finding-the-top-30-terms-of-each-topic"><strong>Finding the top 30 terms of each topic</strong></h4>
+<p>After the results of the LDA modeling, we will ‘eye-ball’ the top 30 words in each topic to make sense of what the model has presented. For example, ‘Topic 1’ has been classified as Covid-education.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Top 30 words by phi (Probability token found in document)</span>
+<span class='va'>top30words</span> <span class='op'>&lt;-</span> <span class='fu'>GetTopTerms</span><span class='op'>(</span><span class='va'>lda</span><span class='op'>$</span><span class='va'>phi</span>, <span class='fl'>30</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>set_names</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"Topic"</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>top30words</span>
+<span class='co'>#write to csv</span>
+<span class='co'>#write_csv(top30words,"data/top_30_words.csv")</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>top30words</span><span class='op'>&lt;-</span><span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/top_30_words.csv"</span><span class='op'>)</span>
+<span class='fu'>glimpse</span><span class='op'>(</span><span class='va'>top30words</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Rows: 30
+Columns: 20
+$ `Topic 1`  &lt;chr&gt; &quot;school&quot;, &quot;students&quot;, &quot;home&quot;, &quot;schools&quot;, &quot;online&quot;~
+$ `Topic 2`  &lt;chr&gt; &quot;malaysia&quot;, &quot;circuit&quot;, &quot;breaker&quot;, &quot;pm&quot;, &quot;measures~
+$ `Topic 3`  &lt;chr&gt; &quot;masks&quot;, &quot;face&quot;, &quot;mask&quot;, &quot;public&quot;, &quot;wear&quot;, &quot;ong&quot;,~
+$ `Topic 4`  &lt;chr&gt; &quot;commentary&quot;, &quot;pandemic&quot;, &quot;forum&quot;, &quot;chan&quot;, &quot;healt~
+$ `Topic 5`  &lt;chr&gt; &quot;visited&quot;, &quot;centre&quot;, &quot;changi&quot;, &quot;mall&quot;, &quot;places&quot;, ~
+$ `Topic 6`  &lt;chr&gt; &quot;india&quot;, &quot;lockdown&quot;, &quot;indonesia&quot;, &quot;cruise&quot;, &quot;aust~
+$ `Topic 7`  &lt;chr&gt; &quot;hong&quot;, &quot;kong&quot;, &quot;china&quot;, &quot;travel&quot;, &quot;flights&quot;, &quot;th~
+$ `Topic 8`  &lt;chr&gt; &quot;south&quot;, &quot;korea&quot;, &quot;china&quot;, &quot;study&quot;, &quot;north&quot;, &quot;out~
+$ `Topic 9`  &lt;chr&gt; &quot;cases&quot;, &quot;reports&quot;, &quot;death&quot;, &quot;deaths&quot;, &quot;community~
+$ `Topic 10` &lt;chr&gt; &quot;trump&quot;, &quot;china&quot;, &quot;biden&quot;, &quot;election&quot;, &quot;pm&quot;, &quot;hou~
+$ `Topic 11` &lt;chr&gt; &quot;food&quot;, &quot;delivery&quot;, &quot;home&quot;, &quot;free&quot;, &quot;tea&quot;, &quot;resta~
+$ `Topic 12` &lt;chr&gt; &quot;ge&quot;, &quot;lee&quot;, &quot;pap&quot;, &quot;pm&quot;, &quot;party&quot;, &quot;wp&quot;, &quot;tan&quot;, &quot;~
+$ `Topic 13` &lt;chr&gt; &quot;facebook&quot;, &quot;court&quot;, &quot;police&quot;, &quot;case&quot;, &quot;media&quot;, &quot;~
+$ `Topic 14` &lt;chr&gt; &quot;support&quot;, &quot;jobs&quot;, &quot;budget&quot;, &quot;pay&quot;, &quot;job&quot;, &quot;worke~
+$ `Topic 15` &lt;chr&gt; &quot;man&quot;, &quot;arrested&quot;, &quot;police&quot;, &quot;woman&quot;, &quot;jail&quot;, &quot;ch~
+$ `Topic 16` &lt;chr&gt; &quot;vaccine&quot;, &quot;china&quot;, &quot;billion&quot;, &quot;global&quot;, &quot;pandemi~
+$ `Topic 17` &lt;chr&gt; &quot;football&quot;, &quot;times&quot;, &quot;top&quot;, &quot;world&quot;, &quot;straits&quot;, &quot;~
+$ `Topic 18` &lt;chr&gt; &quot;stomp&quot;, &quot;man&quot;, &quot;car&quot;, &quot;hdb&quot;, &quot;driver&quot;, &quot;road&quot;, &quot;~
+$ `Topic 19` &lt;chr&gt; &quot;dies&quot;, &quot;actor&quot;, &quot;actress&quot;, &quot;wife&quot;, &quot;singer&quot;, &quot;ba~
+$ `Topic 20` &lt;chr&gt; &quot;workers&quot;, &quot;home&quot;, &quot;positive&quot;, &quot;test&quot;, &quot;stay&quot;, &quot;t~</code></pre>
+</div>
+<h4 id="finding-the-most-probable-topic-of-each-document"><strong>Finding the most probable topic of each document</strong></h4>
+<p>Based on the model, we are also able to determine the topic based on the theta values generated by the model. Since there is a probability of the multiple topics existing within the document, we will pick the <strong>most probable</strong> topic by the max theta value. We will add the top topics into the data frame, combined with our ‘eye power’, we will label the topics accordingly and create a new .csv .</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#finding topic of document by theta (Probabilty of topic in document)</span>
+<span class='co'># get the top topic for each document</span>
+<span class='va'>top_topics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>lda</span><span class='op'>$</span><span class='va'>theta</span>, <span class='fl'>1</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.min.html'>which.max</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>]</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>top_topics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>document <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>top_topics</span><span class='op'>)</span>, Topic <span class='op'>=</span> <span class='va'>top_topics</span>, stringsAsFactors <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+
+<span class='co'># merge together. Now each document has a label from its top topic</span>
+<span class='va'>df_10_updated</span> <span class='op'>&lt;-</span> <span class='va'>df_10</span><span class='op'>%&gt;%</span>
+  <span class='fu'>mutate</span><span class='op'>(</span><span class='va'>top_topics</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>)</span>
+
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_1"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Covid-Education"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_2"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Malaysia"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_3"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Public Transport"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_4"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Covid-Economy"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_5"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Covid-Affected Places"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_6"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"World News"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_7"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Covid-Air Travel"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_8"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Covid-Outbreaks"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_9"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Covid-Daily Cases"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_10"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Global Politics"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_11"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Covid-Food Delivery"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_12"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"SG Elections"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_13"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"SG Fake News"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_14"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"SG Policy"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_15"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Crime"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_16"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Financial Markets"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_17"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Sports"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_18"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"SG Accidents"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_19"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Entertainment News"</span>
+<span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>[</span><span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>==</span><span class='st'>"t_20"</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='st'>"Covid-Domitory Cases"</span>
+
+
+<span class='va'>df_10_updated</span>
+
+<span class='co'>#write_csv(df_10_updated,"data/zeroten.csv")</span>
+</code></pre>
+</div>
+</div>
+<p>From the model run and the most probable topics identified, we are also able to visualise the topic clusters using t-Distributed stochastic neighbor embedding <strong>(t-SNE)</strong>. It is a <a href="https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf">statistical method</a> for visualizing high-dimensional data by giving each data point a location in a two or three-dimensional map.</p>
+<p>Here, our data used will be the theta values generated from the LDA model to visualise the ‘clusters’ of topics. From the plot, we can see that some documents of a certain topic are closely overlapped with documents from another topic. Also there are topics that identified as a topic but are far from the cluster.</p>
+<p>This tallies with the use of the LDA algorithim as they are based off generative probabilities</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>Rtsne</span><span class='op'>)</span>
+<span class='va'>g</span><span class='op'>&lt;-</span><span class='fu'>Rtsne</span><span class='op'>(</span><span class='va'>lda</span><span class='op'>$</span><span class='va'>theta</span>,check_duplicates <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span>
+
+<span class='va'>tsne_plot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>g</span><span class='op'>$</span><span class='va'>Y</span><span class='op'>[</span>,<span class='fl'>1</span><span class='op'>]</span>, y <span class='op'>=</span> <span class='va'>g</span><span class='op'>$</span><span class='va'>Y</span><span class='op'>[</span>,<span class='fl'>2</span><span class='op'>]</span>, col <span class='op'>=</span> <span class='va'>df_10_updated</span><span class='op'>$</span><span class='va'>Topic</span><span class='op'>)</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>tsne_plot</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'>geom_point</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>x</span>, y<span class='op'>=</span><span class='va'>y</span>, color<span class='op'>=</span><span class='va'>col</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<figure>
+<img src="data/tsneplot.jpeg" alt="Topics clusters using t-SNE" /><figcaption aria-hidden="true">Topics clusters using t-SNE</figcaption>
+</figure>
+<h3 id="discovering-the-text"><strong>2.3 Discovering the Text</strong></h3>
+<p>Now we can begin to visualise the topics through different parameters. But first, MOARRR CLEANING!!</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://lubridate.tidyverse.org'>lubridate</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://rpkgs.datanovia.com/ggpubr/'>ggpubr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://plotly-r.com'>plotly</a></span><span class='op'>)</span>
+
+<span class='va'>analysis</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/zeroten.csv"</span><span class='op'>)</span>
+
+<span class='co'>#creating Month column</span>
+<span class='va'>analysis</span><span class='op'>&lt;-</span><span class='va'>analysis</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Month<span class='op'>=</span><span class='fu'><a href='http://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>Published</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'>mutate_at</span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='va'>Month</span><span class='op'>)</span>,<span class='fu'>funs</span><span class='op'>(</span><span class='va'>month</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Count of Topics</span>
+<span class='va'>Topic_dist</span><span class='op'>&lt;-</span><span class='va'>analysis</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Topic</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'>count</span><span class='op'>(</span><span class='va'>Topic</span><span class='op'>)</span>
+<span class='va'>Topic_dist</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 20 x 2
+# Groups:   Topic [20]
+   Topic                     n
+   &lt;chr&gt;                 &lt;int&gt;
+ 1 Covid-Affected Places  4377
+ 2 Covid-Air Travel       5017
+ 3 Covid-Daily Cases      5591
+ 4 Covid-Domitory Cases   3713
+ 5 Covid-Economy          5582
+ 6 Covid-Education        4544
+ 7 Covid-Food Delivery    4360
+ 8 Covid-Outbreaks        4634
+ 9 Crime                  5124
+10 Entertainment News     4334
+11 Financial Markets      5088
+12 Global Politics        5247
+13 Malaysia               4831
+14 Public Transport       4318
+15 SG Accidents           4527
+16 SG Elections           4509
+17 SG Fake News           3478
+18 SG Policy              4947
+19 Sports                 3771
+20 World News             5174</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#plotting the distributi</span>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>Topic_dist</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>Topic</span>,y<span class='op'>=</span><span class='va'>n</span>,fill<span class='op'>=</span><span class='va'>Topic</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_flip.html'>coord_flip</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title<span class='op'>=</span><span class='st'>"Plot of Topic Distribution"</span>,
+       x <span class='op'>=</span><span class='st'>"Topic"</span>, y <span class='op'>=</span> <span class='st'>"Count"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="viz-assign_files/figure-html5/unnamed-chunk-15-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#analysis of Number of headlines by Published date,Source,Topic</span>
+<span class='va'>analysis_PST</span><span class='op'>&lt;-</span><span class='va'>analysis</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>Published</span>,<span class='va'>Source</span>,<span class='va'>Topic</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Published</span>,<span class='va'>Source</span>,<span class='va'>Topic</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>analysis_PST</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 28,652 x 4
+# Groups:   Published, Source, Topic [28,652]
+   Published  Source            Topic                  n
+   &lt;date&gt;     &lt;chr&gt;             &lt;chr&gt;              &lt;int&gt;
+ 1 2019-12-31 Channel News Asia Covid-Air Travel       1
+ 2 2019-12-31 Channel News Asia Covid-Economy          3
+ 3 2019-12-31 Channel News Asia Covid-Education        1
+ 4 2019-12-31 Channel News Asia Covid-Outbreaks        4
+ 5 2019-12-31 Channel News Asia SG Fake News           2
+ 6 2019-12-31 Channel News Asia SG Policy              1
+ 7 2019-12-31 Channel News Asia World News             2
+ 8 2019-12-31 Mothership        Crime                  1
+ 9 2019-12-31 Mothership        Entertainment News     2
+10 2019-12-31 Mothership        SG Accidents           1
+# ... with 28,642 more rows</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>analysis_PST</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>Published</span>, y<span class='op'>=</span><span class='va'>n</span>, color<span class='op'>=</span><span class='va'>Source</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>Topic</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title<span class='op'>=</span><span class='st'>"Plot of Daily Headlines"</span>,
+       x <span class='op'>=</span><span class='st'>"Date Published"</span>, y <span class='op'>=</span> <span class='st'>"Count"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="viz-assign_files/figure-html5/unnamed-chunk-16-1.png" width="624" /></p>
+</div>
+<p>Since Faceting by Topics, makes the plot less visible we will do an analysis by source by using the filter option and selecting Channel News Asia as a media source for example.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#analysis of Number of headlines by Published date,Month,Topic, Source = Channel news Asia</span>
+<span class='va'>analysis_CNA</span><span class='op'>&lt;-</span><span class='va'>analysis</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>Published</span>,<span class='va'>Source</span>,<span class='va'>Topic</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Published</span>,<span class='va'>Source</span>,<span class='va'>Topic</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Source</span><span class='op'>==</span> <span class='st'>'Channel News Asia'</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>analysis_CNA</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6,559 x 4
+# Groups:   Published, Source, Topic [6,559]
+   Published  Source            Topic                n
+   &lt;date&gt;     &lt;chr&gt;             &lt;chr&gt;            &lt;int&gt;
+ 1 2019-12-31 Channel News Asia Covid-Air Travel     1
+ 2 2019-12-31 Channel News Asia Covid-Economy        3
+ 3 2019-12-31 Channel News Asia Covid-Education      1
+ 4 2019-12-31 Channel News Asia Covid-Outbreaks      4
+ 5 2019-12-31 Channel News Asia SG Fake News         2
+ 6 2019-12-31 Channel News Asia SG Policy            1
+ 7 2019-12-31 Channel News Asia World News           2
+ 8 2020-01-01 Channel News Asia Covid-Air Travel     2
+ 9 2020-01-01 Channel News Asia Covid-Economy        1
+10 2020-01-01 Channel News Asia Covid-Education      4
+# ... with 6,549 more rows</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>analysis_CNA</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>Published</span>, y<span class='op'>=</span><span class='va'>n</span>, color<span class='op'>=</span><span class='va'>Source</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>Topic</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title<span class='op'>=</span><span class='st'>"Plot of Daily Headlines by Channel News Asia"</span>,
+       x <span class='op'>=</span><span class='st'>"Date Published"</span>, y <span class='op'>=</span> <span class='st'>"Count"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="viz-assign_files/figure-html5/unnamed-chunk-17-1.png" width="624" /></p>
+</div>
+<p>Here we see a spike in the GE2020 topic. Thus we will look further in to this plot by filtering out the other topics and analyse it against other sources.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>analysis_PST_GE</span><span class='op'>&lt;-</span><span class='va'>analysis_PST</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Topic</span> <span class='op'>==</span> <span class='st'>'SG Elections'</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>analysis_PST_GE</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>Published</span>, y<span class='op'>=</span><span class='va'>n</span>, color<span class='op'>=</span><span class='va'>Source</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title<span class='op'>=</span><span class='st'>"Plot of SG Election Headlines by Source"</span>,
+       x <span class='op'>=</span><span class='st'>"Date Published"</span>, y <span class='op'>=</span> <span class='st'>"Count"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="viz-assign_files/figure-html5/unnamed-chunk-18-1.png" width="624" /></p>
+</div>
+<h2 id="proposed-visualisation"><strong>3. Proposed Visualisation</strong></h2>
+<p>These are some visualisations of our dataset. In our shinyapp, we will explore further through more visualisations and greater interactivity using other packages like ‘vistime’. Below is the proposed visualisation that will be used.</p>
+<p>The interactive module will include the LDAvis output and allow for the user to view the Topic distributions by filtering through the Source and timeline. Hovering over the plot will display the Headline data so viewers can see importants Headlines.</p>
+<figure>
+<img src="data/Proposed%20visualisation.jpeg" alt="Proposed Visualisation" /><figcaption aria-hidden="true">Proposed Visualisation</figcaption>
+</figure>
+<h2 id="conclusion"><strong>4.Conclusion</strong></h2>
+<p>From the work done, Text Analysis is a relatively difficult field due to machine learning algorithms are unable to understand the way semantics behind every word. The data cleaning might make the headlines lose its meaning and prove diffcult to model the topics after. The t-SNE plot also shows the limitation of using LDA for topic modeling as there may be multiple topics that exist within the document.</p>
+<p>The purpose of the this module is to discover topics through the different headlines and will be used in conjunction with my fellow gods amongst men <a href="">Nam Jihun</a> and <a href="">Atticus Foo</a> who will cover detection of news through interactions and exploring the corpus of text and word n_grams respectively. Many packages have been considered during the process of creating the app, however we were limited in its selection due to the deployment in Rshiny.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
