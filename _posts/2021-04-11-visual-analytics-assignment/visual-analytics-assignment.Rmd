@@ -26,8 +26,10 @@ set.seed(2016L)
 
 ```
 
+```{r, echo=FALSE, out.width="50%", fig.cap="Data Re-presented.",layout="m-page", fig.width=8, fig.height=4}
+knitr::include_graphics("images/newsheader.jpg")
+```
 
-![Online News](images/newsheader.jpg)
 
 # Overview: Difficult to sense-make news headlines in digital landscape 
 
@@ -334,7 +336,7 @@ htmltools::tags$iframe(title = "Sunburst", src = "Sunburst.html", width="1200", 
 As such, despite the packages ability to quickly read data (eg. using FREAD) and their ability to present topline data in an interactive and easy to understand manner, it was not suitable for the purposes of our project. 
 
 
-## 4.Objective 1 [Explore]: Sorting through and identifying key events in large corpus of news
+## 4.**Objective 1: Explore** - Sorting through and identifying key events in large corpus of news
 
 The alternative found was using a new package called [CorporaExplorer](https://github.com/kgjerde/corporaexplorer). Using the package creates a Shiny App that allows us to quickly input a corpus of documents that can be easily searched by [date or keyword](https://kgjerde.github.io/corporaexplorer/). The output is an interactive heatmap “where each tile represents one document” as well as each document’s corresponding metadata. Using the data we have loaded, we can easily prepare the corpus for visualization using this package. 
 
@@ -373,7 +375,7 @@ The Coporaexplorer package is able to handle the 91k articles quickly and allows
 
 More detail regarding the module for Objective 1 can be found at the project blog here.
 
-## 5.Objective 2 [Discover] Providing greater detail and context about a topic / news source using sentiment
+## 5.**Objective 2: Discover** -] Providing greater detail and context about a topic / news source using sentiment
 
 The second objective to use statistical methods to provide greater detail and context around each topic and news source can be done through sentiment analysis. This will allow readers to understand the value of the sentiment attached to the topic or media source and observe its changes across time. 
 
@@ -488,7 +490,7 @@ Summary(teststock3.lm)
 The results for the multiple regression model demonstrate that there is significant collinearity between negative media sentiment and the closing stock prices of the SGX daily. As seen in the results, news events and headlines should be analyzed in greater detail because they can have very real and tangible impact. 
 
 
-## 6.Objective 2: Providing greater detail and context about a topic / news source using word networks and co-occurrences 
+## 6.**Objective 2: Discover** - Providing greater detail and context about a topic / news source using word networks and co-occurrences 
 Word network
 
 Another method explored for allowing users to read in greater detail, the different topics and news sources, is the analysis and visualization of word structure. This can be done by analyzing the word graph or word networks relating to the topic or media source. Word analysis using statistical methods can be very use in helping to track and visualize the evolution of [news](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0122174), and demonstrate how differently each media has covered a [topic](https://towardsdatascience.com/measuring-discourse-bias-using-text-network-analysis-9f251be5f6f3).
@@ -565,7 +567,7 @@ As seen in the visualization above, the word network can be elegantly displayed 
 The proposed sketch and detail regarding the module for Objective 2 can be found in the later section of this blog here. 
 
 
-## 7.Objective 3 [Detect] Providing alerts to unusual patterns in news analysis 
+## 7.**Objective 3: Detect** - Providing alerts to unusual patterns in news analysis 
 
 To meet objective 3 for the project, we researched how technology companies such [CrowdTangle](https://www.theverge.com/2016/11/11/13594338/facebook-acquires-crowdtangle) and [Newswhip](https://www.newswhip.com/2016/08/spike-predict-viral-stories-update/) used engagement figures in order to predict the likelihood articles go viral.  Newswhip utilizes a method of measuring [velocity](https://www.newswhip.com/2014/01/what-is-social-velocity/) by tracking the speed of engagements and measures if it is overperforming when compared to the average interaction speed of other articles from the same publisher.  
 ![Anomaly detection in time series - photo credit Analytics Vidhya](images/anomaly detection.png)
@@ -595,7 +597,7 @@ While there are many aspects to explore to help make sense of the news corpus, w
 
 Future work could include advance methods for dynamic topic modeling, which would be helpful in identifying how a topic evolve across time (e.g. from Wuhan Virus, to Coronavirus to Covid-19) as well as building on word-graphing and word network techniques for the identification of duplicate articles or ‘fake news’. Improvements can also be made to the user experience by customizing CRAN packages that are used for the purposes of this project.
 
-Thank youf or reading up to this point. 
+Thank you for reading up to this point. 
 
 _This blog is a data visualization assignment for the MITB programme at the Singapore Management University._
 
