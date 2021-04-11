@@ -31,7 +31,7 @@ knitr::include_graphics("images/newsheader.jpg")
 ```
 
 
-# Overview: Difficult to sense-make news headlines in digital landscape 
+# Overview of Problem Statement: Difficult to sense-make news headlines in digital landscape 
 
 Making sense of the news in today’s landscape is extremely difficult because of: 
 
@@ -41,7 +41,7 @@ Making sense of the news in today’s landscape is extremely difficult because o
 
 This can be useful as news headlines can have very real impact on not just personal sense-making but also cause tangible effects. This can be seen from how media reporting can contribute to the public’s understanding of safe distancing measures during COVID-19 to how it can influence share prices on the stock market. The following blogpost is to establish the project’s objectives, explore current practices, and prototype methods in order to help readers navigate the digital news landscape.
 
-# Goal: Provide readers with useful snapshots of news headlines
+# Project Objective: Provide readers with useful snapshots of news headlines
 
 As such, the team’s goal is to build an accessible dashboard that can help readers of local news sites (both mainstream and non-mainstream) quickly navigate and understand a large corpus of news. This will be done by applying statistical methods to sort large volumes of unstructured data. The intended result is different snapshots that would allow readers to:
 
@@ -58,7 +58,7 @@ As such, the team’s goal is to build an accessible dashboard that can help rea
 As such, while the presentation of the ‘snapshot’ may appear simple, the methods that would derive these insights are not. The approach taken for this project is based on a mixed of deep research of current statistical methods, domain knowledge of the local news reporting landscape and rigorous data wrangling.
 
 
-# Data: Local News Reports in 2020 
+# Our Data Source: Local News Reports in 2020 
 
 The data selected for analysis is from 1 January 2020 to 31 December 2020. These local news sites are a mix of mainstream (Straits Times, Channel News Asia, AsiaOne) and non-mainstream (Mothership, MustShareNews, The Independent) sites. A few others such as (TODAY Online, The Online Citizen) were initially selected but removed from our observations. This will be explained at the data wrangling phase.
 
@@ -314,7 +314,7 @@ group_by(day)%>%
 add_column(topic = topic ,.before = 'Date’))
 ```
 
-## 3.Presenting Snapshot  
+## 3.Methods for Presenting Snapshot  
 To achieve the objective of presenting a useful snapshot or report card of the media situation, we explored different packages such as [SunburstR(https://cran.r-project.org/web/packages/sunburstR/index.html), [GGVIS](https://cran.r-project.org/web/packages/ggvis/index.html) , [Esquisse](https://cran.r-project.org/web/packages/esquisse/index.html) and [D3PartitionR](https://github.com/AntoineGuillot2/D3partitionR) which can read large volumes of data quickly (using FREAD). 
 
 ![D3PartitionR Example](images/d3.gif)
@@ -336,7 +336,7 @@ htmltools::tags$iframe(title = "Sunburst", src = "Sunburst.html", width="1200", 
 As such, despite the packages ability to quickly read data (eg. using FREAD) and their ability to present topline data in an interactive and easy to understand manner, it was not suitable for the purposes of our project. 
 
 
-## 4.**Objective 1: Explore** - Sorting through and identifying key events in large corpus of news
+### 3.1.**Objective 1: Explore** - Sorting through and identifying key events in large corpus of news
 
 The alternative found was using a new package called [CorporaExplorer](https://github.com/kgjerde/corporaexplorer). Using the package creates a Shiny App that allows us to quickly input a corpus of documents that can be easily searched by [date or keyword](https://kgjerde.github.io/corporaexplorer/). The output is an interactive heatmap “where each tile represents one document” as well as each document’s corresponding metadata. Using the data we have loaded, we can easily prepare the corpus for visualization using this package. 
 
@@ -375,7 +375,7 @@ The Coporaexplorer package is able to handle the 91k articles quickly and allows
 
 More detail regarding the module for Objective 1 can be found at the project blog here.
 
-## 5.**Objective 2: Discover** -] Providing greater detail and context about a topic / news source using sentiment
+### 3.2.**Objective 2: Discover** -] Providing greater detail and context about a topic / news source using sentiment
 
 The second objective to use statistical methods to provide greater detail and context around each topic and news source can be done through sentiment analysis. This will allow readers to understand the value of the sentiment attached to the topic or media source and observe its changes across time. 
 
@@ -490,7 +490,7 @@ Summary(teststock3.lm)
 The results for the multiple regression model demonstrate that there is significant collinearity between negative media sentiment and the closing stock prices of the SGX daily. As seen in the results, news events and headlines should be analyzed in greater detail because they can have very real and tangible impact. 
 
 
-## 6.**Objective 2: Discover** - Providing greater detail and context about a topic / news source using word networks and co-occurrences 
+### 3.3.**Objective 2: Discover** - Providing greater detail and context about a topic / news source using word networks and co-occurrences 
 Word network
 
 Another method explored for allowing users to read in greater detail, the different topics and news sources, is the analysis and visualization of word structure. This can be done by analyzing the word graph or word networks relating to the topic or media source. Word analysis using statistical methods can be very use in helping to track and visualize the evolution of [news](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0122174), and demonstrate how differently each media has covered a [topic](https://towardsdatascience.com/measuring-discourse-bias-using-text-network-analysis-9f251be5f6f3).
@@ -544,7 +544,7 @@ Referenced earlier in the blog, is Masood’s work that we felt was very useful 
 Unfortunately, this visualization of presenting sets is more useful when the number of documents in the text is small. Visualizing this over 96k articles will be less helpful, even after aggregation into different topics. An alternative approach of visualizing co-occurrence is explore in the next section. 
 
 
-### Co-Occurrences
+#### Co-Occurrences
 
 Finally, using the tri-grams identified in the text, we are able to visualize how any two words in a selected corpus is used, where they are similar and where they [diverge](https://www.chrisharrison.net/index.php/Visualizations/WebTrigrams). Research into empirical [linguistics](https://www.researchgate.net/publication/285764383_Collocations_and_statistical_analysis_of_n-grams_Multiword_expressions_in_newspaper_text) have identified how the frequency of words occurring together can give insight and meaning to the treatment of a topic and the ‘closeness’ of association between entities. This can help readers understand the context to how words in media coverage was used when compared to [each other](https://www.hvitfeldt.me/blog/visualizing-trigrams-with-the-tidyverse/). 
 
@@ -567,7 +567,7 @@ As seen in the visualization above, the word network can be elegantly displayed 
 The proposed sketch and detail regarding the module for Objective 2 can be found in the later section of this blog here. 
 
 
-## 7.**Objective 3: Detect** - Providing alerts to unusual patterns in news analysis 
+### 3.4.**Objective 3: Detect** - Providing alerts to unusual patterns in news analysis 
 
 To meet objective 3 for the project, we researched how technology companies such [CrowdTangle](https://www.theverge.com/2016/11/11/13594338/facebook-acquires-crowdtangle) and [Newswhip](https://www.newswhip.com/2016/08/spike-predict-viral-stories-update/) used engagement figures in order to predict the likelihood articles go viral.  Newswhip utilizes a method of measuring [velocity](https://www.newswhip.com/2014/01/what-is-social-velocity/) by tracking the speed of engagements and measures if it is overperforming when compared to the average interaction speed of other articles from the same publisher.  
 ![Anomaly detection in time series - photo credit Analytics Vidhya](images/anomaly detection.png)
@@ -582,7 +582,7 @@ More detail regarding the module for Objective 3 can be found at the project blo
 To summarize, we will be adopting packages for three different modules to meet our objectives of helping readers to better understand news events in a large corpus of headlines, create snapshots that are based on rigorous statistical methods to understand quickly the context surrounding a topic and finally to see red-flags / or anomalous instances in the news corpus. 
 
 
-# Proposed Sketch of Project Module 2: Contextual Insight to Topics
+# Proposed Sketch of Project Module 2: Discovering Topics and it's context
 Based on the research work, methods and proto-typing found above  the proposed dashboard for the Project’s Module that will help readers contextualize news topics and sources can be found in the sketch below. 
 
 ![Sketch for proposed module](images/modulesketch.jpg)

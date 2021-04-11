@@ -2103,9 +2103,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#overview-difficult-to-sense-make-news-headlines-in-digital-landscape">Overview: Difficult to sense-make news headlines in digital landscape</a></li>
-<li><a href="#goal-provide-readers-with-useful-snapshots-of-news-headlines">Goal: Provide readers with useful snapshots of news headlines</a></li>
-<li><a href="#data-local-news-reports-in-2020">Data: Local News Reports in 2020</a></li>
+<li><a href="#overview-of-problem-statement-difficult-to-sense-make-news-headlines-in-digital-landscape">Overview of Problem Statement: Difficult to sense-make news headlines in digital landscape</a></li>
+<li><a href="#project-objective-provide-readers-with-useful-snapshots-of-news-headlines">Project Objective: Provide readers with useful snapshots of news headlines</a></li>
+<li><a href="#our-data-source-local-news-reports-in-2020">Our Data Source: Local News Reports in 2020</a></li>
 <li><a href="#literature-review">Literature review:</a>
 <ul>
 <li><a href="#importance-of-analyzing-unstructured-news-data">Importance of analyzing unstructured news data</a></li>
@@ -2131,17 +2131,19 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><a href="#package-selected-text2vec">Package Selected: text2Vec</a></li>
 <li><a href="#visualizing-results">Visualizing Results</a></li>
 </ul></li>
-<li><a href="#presenting-snapshot">3.Presenting Snapshot</a></li>
-<li><a href="#objective-1-explore---sorting-through-and-identifying-key-events-in-large-corpus-of-news">4.<strong>Objective 1: Explore</strong> - Sorting through and identifying key events in large corpus of news</a></li>
-<li><a href="#objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-sentiment">5.<strong>Objective 2: Discover</strong> -] Providing greater detail and context about a topic / news source using sentiment</a></li>
-<li><a href="#objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-word-networks-and-co-occurrences">6.<strong>Objective 2: Discover</strong> - Providing greater detail and context about a topic / news source using word networks and co-occurrences</a>
+<li><a href="#methods-for-presenting-snapshot">3.Methods for Presenting Snapshot</a>
+<ul>
+<li><a href="#objective-1-explore---sorting-through-and-identifying-key-events-in-large-corpus-of-news">3.1.<strong>Objective 1: Explore</strong> - Sorting through and identifying key events in large corpus of news</a></li>
+<li><a href="#objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-sentiment">3.2.<strong>Objective 2: Discover</strong> -] Providing greater detail and context about a topic / news source using sentiment</a></li>
+<li><a href="#objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-word-networks-and-co-occurrences">3.3.<strong>Objective 2: Discover</strong> - Providing greater detail and context about a topic / news source using word networks and co-occurrences</a>
 <ul>
 <li><a href="#co-occurrences">Co-Occurrences</a></li>
 </ul></li>
-<li><a href="#objective-3-detect---providing-alerts-to-unusual-patterns-in-news-analysis">7.<strong>Objective 3: Detect</strong> - Providing alerts to unusual patterns in news analysis</a></li>
+<li><a href="#objective-3-detect---providing-alerts-to-unusual-patterns-in-news-analysis">3.4.<strong>Objective 3: Detect</strong> - Providing alerts to unusual patterns in news analysis</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#summary-of-observations-from-exploration-of-r-packages">Summary of observations from exploration of R Packages</a></li>
-<li><a href="#proposed-sketch-of-project-module-2-contextual-insight-to-topics">Proposed Sketch of Project Module 2: Contextual Insight to Topics</a></li>
+<li><a href="#proposed-sketch-of-project-module-2-discovering-topics-and-its-context">Proposed Sketch of Project Module 2: Discovering Topics and it’s context</a></li>
 <li><a href="#closing-reflections">Closing Reflections</a></li>
 </ul>
 </nav>
@@ -2154,7 +2156,7 @@ Figure 1: Data Re-presented.
 </p>
 </div>
 </div>
-<h1 id="overview-difficult-to-sense-make-news-headlines-in-digital-landscape">Overview: Difficult to sense-make news headlines in digital landscape</h1>
+<h1 id="overview-of-problem-statement-difficult-to-sense-make-news-headlines-in-digital-landscape">Overview of Problem Statement: Difficult to sense-make news headlines in digital landscape</h1>
 <p>Making sense of the news in today’s landscape is extremely difficult because of:</p>
 <ol type="1">
 <li>The volume of information available to you via digital channels;</li>
@@ -2162,7 +2164,7 @@ Figure 1: Data Re-presented.
 <li>News can be manipulated based on phishing (creating duplicates) and inflated engagement metrics campaigns.</li>
 </ol>
 <p>This can be useful as news headlines can have very real impact on not just personal sense-making but also cause tangible effects. This can be seen from how media reporting can contribute to the public’s understanding of safe distancing measures during COVID-19 to how it can influence share prices on the stock market. The following blogpost is to establish the project’s objectives, explore current practices, and prototype methods in order to help readers navigate the digital news landscape.</p>
-<h1 id="goal-provide-readers-with-useful-snapshots-of-news-headlines">Goal: Provide readers with useful snapshots of news headlines</h1>
+<h1 id="project-objective-provide-readers-with-useful-snapshots-of-news-headlines">Project Objective: Provide readers with useful snapshots of news headlines</h1>
 <p>As such, the team’s goal is to build an accessible dashboard that can help readers of local news sites (both mainstream and non-mainstream) quickly navigate and understand a large corpus of news. This will be done by applying statistical methods to sort large volumes of unstructured data. The intended result is different snapshots that would allow readers to:</p>
 <ol type="1">
 <li><strong>[Explore]</strong> Sort through and identify key events in the large corpus of news events by:
@@ -2182,7 +2184,7 @@ Figure 1: Data Re-presented.
 </ol></li>
 </ol>
 <p>As such, while the presentation of the ‘snapshot’ may appear simple, the methods that would derive these insights are not. The approach taken for this project is based on a mixed of deep research of current statistical methods, domain knowledge of the local news reporting landscape and rigorous data wrangling.</p>
-<h1 id="data-local-news-reports-in-2020">Data: Local News Reports in 2020</h1>
+<h1 id="our-data-source-local-news-reports-in-2020">Our Data Source: Local News Reports in 2020</h1>
 <p>The data selected for analysis is from 1 January 2020 to 31 December 2020. These local news sites are a mix of mainstream (Straits Times, Channel News Asia, AsiaOne) and non-mainstream (Mothership, MustShareNews, The Independent) sites. A few others such as (TODAY Online, The Online Citizen) were initially selected but removed from our observations. This will be explained at the data wrangling phase.</p>
 <figure>
 <img src="images/PRRT%20DASHBOARD.PNG" alt="Prrt" /><figcaption aria-hidden="true">Prrt</figcaption>
@@ -2356,7 +2358,7 @@ perplexity(new_dtm, topic_word_distribution = lda_model$topic_word_distribution,
 <p>We want to save the topics derived for further analysis using the code below. This will allow engagement data derived from the articles to be visualized in an aggregated fashion as topics, instead of per article (which is not ideal as there are 96k articles).</p>
 <pre class="{r}"><code>group_by(day)%&gt;%
 add_column(topic = topic ,.before = &#39;Date’))</code></pre>
-<h2 id="presenting-snapshot">3.Presenting Snapshot</h2>
+<h2 id="methods-for-presenting-snapshot">3.Methods for Presenting Snapshot</h2>
 <p>To achieve the objective of presenting a useful snapshot or report card of the media situation, we explored different packages such as [SunburstR(<a href="https://cran.r-project.org/web/packages/sunburstR/index.html" class="uri">https://cran.r-project.org/web/packages/sunburstR/index.html</a>), <a href="https://cran.r-project.org/web/packages/ggvis/index.html">GGVIS</a> , <a href="https://cran.r-project.org/web/packages/esquisse/index.html">Esquisse</a> and <a href="https://github.com/AntoineGuillot2/D3partitionR">D3PartitionR</a> which can read large volumes of data quickly (using FREAD).</p>
 <figure>
 <img src="images/D3.gif" alt="D3PartitionR Example" /><figcaption aria-hidden="true">D3PartitionR Example</figcaption>
@@ -2372,7 +2374,7 @@ add_column(topic = topic ,.before = &#39;Date’))</code></pre>
 <p><iframe title="Sunburst" src="Sunburst.html" width="1200" height="850"></iframe></p>
 </div>
 <p>As such, despite the packages ability to quickly read data (eg. using FREAD) and their ability to present topline data in an interactive and easy to understand manner, it was not suitable for the purposes of our project.</p>
-<h2 id="objective-1-explore---sorting-through-and-identifying-key-events-in-large-corpus-of-news">4.<strong>Objective 1: Explore</strong> - Sorting through and identifying key events in large corpus of news</h2>
+<h3 id="objective-1-explore---sorting-through-and-identifying-key-events-in-large-corpus-of-news">3.1.<strong>Objective 1: Explore</strong> - Sorting through and identifying key events in large corpus of news</h3>
 <p>The alternative found was using a new package called <a href="https://github.com/kgjerde/corporaexplorer">CorporaExplorer</a>. Using the package creates a Shiny App that allows us to quickly input a corpus of documents that can be easily searched by <a href="https://kgjerde.github.io/corporaexplorer/">date or keyword</a>. The output is an interactive heatmap “where each tile represents one document” as well as each document’s corresponding metadata. Using the data we have loaded, we can easily prepare the corpus for visualization using this package.</p>
 <pre class="{r}"><code>install.packages(“corporaexplorer”)
 library(corporaexplorer)
@@ -2400,7 +2402,7 @@ corpus_explorer &lt;-
 </figure>
 <p>The Coporaexplorer package is able to handle the 91k articles quickly and allows for readers to search the entire corpus by (up to 5) keywords. Selecting a specific day in the Coporaexplorer plot allows readers to then discover more about the selected article / document. This includes the corresponding engagement data regarding the article’s reach and URL and allows readers to meet the goal of quickly sorting through a large corpus of news events by time, topic and keyword.</p>
 <p>More detail regarding the module for Objective 1 can be found at the project blog here.</p>
-<h2 id="objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-sentiment">5.<strong>Objective 2: Discover</strong> -] Providing greater detail and context about a topic / news source using sentiment</h2>
+<h3 id="objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-sentiment">3.2.<strong>Objective 2: Discover</strong> -] Providing greater detail and context about a topic / news source using sentiment</h3>
 <p>The second objective to use statistical methods to provide greater detail and context around each topic and news source can be done through sentiment analysis. This will allow readers to understand the value of the sentiment attached to the topic or media source and observe its changes across time.</p>
 <p>There are several sentiment analysis packages available including syuzhet and <a href="https://cran.r-project.org/web/packages/sentimentr/readme/README.html">sentimentr</a>. Lexicons that are available for sentiment analysis include “Bing”, “AFINN” and [“NRC”])(<a href="https://hoyeolkim.wordpress.com/2018/02/25/the-limits-of-the-bing-afinn-and-nrc-lexicons-with-the-tidytext-package-in-r/" class="uri">https://hoyeolkim.wordpress.com/2018/02/25/the-limits-of-the-bing-afinn-and-nrc-lexicons-with-the-tidytext-package-in-r/</a>).</p>
 <pre class="{r}&#39;&#39;`"><code>install.packages(“sentimentr”, “GGally”, “glue”, “reshape2”)
@@ -2492,7 +2494,7 @@ Summary(teststock3.lm)</code></pre>
 <img src="images/mlr%20stock.PNG" alt="MLR Results" /><figcaption aria-hidden="true">MLR Results</figcaption>
 </figure>
 <p>The results for the multiple regression model demonstrate that there is significant collinearity between negative media sentiment and the closing stock prices of the SGX daily. As seen in the results, news events and headlines should be analyzed in greater detail because they can have very real and tangible impact.</p>
-<h2 id="objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-word-networks-and-co-occurrences">6.<strong>Objective 2: Discover</strong> - Providing greater detail and context about a topic / news source using word networks and co-occurrences</h2>
+<h3 id="objective-2-discover---providing-greater-detail-and-context-about-a-topic-news-source-using-word-networks-and-co-occurrences">3.3.<strong>Objective 2: Discover</strong> - Providing greater detail and context about a topic / news source using word networks and co-occurrences</h3>
 <p>Word network</p>
 <p>Another method explored for allowing users to read in greater detail, the different topics and news sources, is the analysis and visualization of word structure. This can be done by analyzing the word graph or word networks relating to the topic or media source. Word analysis using statistical methods can be very use in helping to track and visualize the evolution of <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0122174">news</a>, and demonstrate how differently each media has covered a <a href="https://towardsdatascience.com/measuring-discourse-bias-using-text-network-analysis-9f251be5f6f3">topic</a>.</p>
 <p>Using R packages such as tidytext, dplyr, igraph and ggraph, we can <a href="https://www.tidytextmining.com/ngrams.html">plot</a> the word networks related to different topics in the corpus.</p>
@@ -2537,7 +2539,7 @@ geom_node_text(aes(label = name), vjust = 1, hjust = 1)</code></pre>
 <img src="images/cooccurrence.PNG" alt="Co-occurrences across different texts" /><figcaption aria-hidden="true">Co-occurrences across different texts</figcaption>
 </figure>
 <p>Unfortunately, this visualization of presenting sets is more useful when the number of documents in the text is small. Visualizing this over 96k articles will be less helpful, even after aggregation into different topics. An alternative approach of visualizing co-occurrence is explore in the next section.</p>
-<h3 id="co-occurrences">Co-Occurrences</h3>
+<h4 id="co-occurrences">Co-Occurrences</h4>
 <p>Finally, using the tri-grams identified in the text, we are able to visualize how any two words in a selected corpus is used, where they are similar and where they <a href="https://www.chrisharrison.net/index.php/Visualizations/WebTrigrams">diverge</a>. Research into empirical <a href="https://www.researchgate.net/publication/285764383_Collocations_and_statistical_analysis_of_n-grams_Multiword_expressions_in_newspaper_text">linguistics</a> have identified how the frequency of words occurring together can give insight and meaning to the treatment of a topic and the ‘closeness’ of association between entities. This can help readers understand the context to how words in media coverage was used when compared to <a href="https://www.hvitfeldt.me/blog/visualizing-trigrams-with-the-tidyverse/">each other</a>.</p>
 <p>For this segment, we were inspired by the work of <a href="https://www.chrisharrison.net/index.php/Visualizations/WebTrigrams">Chris Harissson</a> and <a href="https://github.com/EmilHvitfeldt">Emil Hvitfeldt</a>. We will need to call on the packages of purrrlyr for this next visualization. The code below is attributed to <a href="https://www.hvitfeldt.me/blog/visualizing-trigrams-with-the-tidyverse/">Emil Hvitfeldt</a>.</p>
 <pre class="{r}&#39;&#39;`"><code>install.pacakges(“purrrlyr”)
@@ -2552,14 +2554,14 @@ trigrams &lt;- tibble(text = media_explore$Text) %&gt;%
 start_words &lt;- c(&quot;covid&quot;, &quot;coronavirus&quot;)</code></pre>
 <p>As seen in the visualization above, the word network can be elegantly displayed and compared with each other to see how they unfold more often in media coverage. From the visualization, we can infer that the word PAP is more often related to a wider range of words in media coverage compared to WP. We hope to integrate this function as a module in the Shiny Dashboard for the project.</p>
 <p>The proposed sketch and detail regarding the module for Objective 2 can be found in the later section of this blog here.</p>
-<h2 id="objective-3-detect---providing-alerts-to-unusual-patterns-in-news-analysis">7.<strong>Objective 3: Detect</strong> - Providing alerts to unusual patterns in news analysis</h2>
+<h3 id="objective-3-detect---providing-alerts-to-unusual-patterns-in-news-analysis">3.4.<strong>Objective 3: Detect</strong> - Providing alerts to unusual patterns in news analysis</h3>
 <p>To meet objective 3 for the project, we researched how technology companies such <a href="https://www.theverge.com/2016/11/11/13594338/facebook-acquires-crowdtangle">CrowdTangle</a> and <a href="https://www.newswhip.com/2016/08/spike-predict-viral-stories-update/">Newswhip</a> used engagement figures in order to predict the likelihood articles go viral. Newswhip utilizes a method of measuring <a href="https://www.newswhip.com/2014/01/what-is-social-velocity/">velocity</a> by tracking the speed of engagements and measures if it is overperforming when compared to the average interaction speed of other articles from the same publisher.<br />
 <img src="images/anomaly%20detection.png" alt="Anomaly detection in time series - photo credit Analytics Vidhya" /></p>
 <p>This can be useful for us to visualize anomalies in time series using packages in <a href="https://www.analyticsvidhya.com/blog/2020/12/a-case-study-to-detect-anomalies-in-time-series-using-anomalize-package-in-r/">R</a>. Sorting this by media type or by topic, can help to identify if there are key articles or events that need to be explored first, amongst the influx of articles that being disseminated at any point of time.</p>
 <p>More detail regarding the module for Objective 3 can be found at the project blog here (url)</p>
 <h1 id="summary-of-observations-from-exploration-of-r-packages">Summary of observations from exploration of R Packages</h1>
 <p>To summarize, we will be adopting packages for three different modules to meet our objectives of helping readers to better understand news events in a large corpus of headlines, create snapshots that are based on rigorous statistical methods to understand quickly the context surrounding a topic and finally to see red-flags / or anomalous instances in the news corpus.</p>
-<h1 id="proposed-sketch-of-project-module-2-contextual-insight-to-topics">Proposed Sketch of Project Module 2: Contextual Insight to Topics</h1>
+<h1 id="proposed-sketch-of-project-module-2-discovering-topics-and-its-context">Proposed Sketch of Project Module 2: Discovering Topics and it’s context</h1>
 <p>Based on the research work, methods and proto-typing found above the proposed dashboard for the Project’s Module that will help readers contextualize news topics and sources can be found in the sketch below.</p>
 <figure>
 <img src="images/modulesketch.jpg" alt="Sketch for proposed module" /><figcaption aria-hidden="true">Sketch for proposed module</figcaption>
