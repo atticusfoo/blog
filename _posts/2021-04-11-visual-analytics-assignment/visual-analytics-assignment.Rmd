@@ -1,7 +1,7 @@
 ---
-title: "Assignment Analytics Assignment"
+title: "Visual Analytics Assignment"
 description: |
-  Exploring and Protoyping Visualizations for Understanding News Corpus.
+  Exploring and Protoyping visualizations methods for Understanding News Corpus.
 author:
   - name: Atticus Foo
     url: https://public.tableau.com/profile/atticusfoo#!/
