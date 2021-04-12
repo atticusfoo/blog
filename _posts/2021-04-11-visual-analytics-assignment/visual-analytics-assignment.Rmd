@@ -105,11 +105,11 @@ Other interesting methods explored for text visualization build on Venn and Eule
 
 They include work by Rodgers, Stapleton & Chapman ([Visualizing sets with linear diagrams](https://kar.kent.ac.uk/50020/) which demonstrate the intersection where words are shared by different sources or topics.
 
-![Visualizing sets with linear diagrams](images/linear sets.png)
+![Visualizing sets with linear diagrams](images/linear.png)
 
 A similar approach was adopted by Luz and Masood (a comparison of linear and mosaic diagrams for [set visualization](https://journals.sagepub.com/doi/abs/10.1177/1473871618754343).
 
-![Comparison of different scalings of mosaic and lienar diagrams](images/mosaic linear diagram.png)
+![Comparison of different scalings of mosaic and lienar diagrams](images/moasic linear diagram.png)
 
 However, these methods were not entirely applicable for our project as these visualizations benefitted from a small number of documents that could be extensive in length. Our dataset however, consists of over 200,000 documents that were all very short in length (a news headline typically has up to 30 words). 
 
@@ -277,7 +277,7 @@ barplot(doc_topic_distr[1, ], xlab = "topic",
         names.arg = 1:ncol(doc_topic_distr))
 ```
 
-![Doing this will give the distribution for the topic distribution for the first document](images/tidytext lda.png)
+![Doing this will give the distribution for the topic distribution for the first document](images/tidytextlda.png)
 
 
 ```{r}`r ''`
